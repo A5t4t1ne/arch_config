@@ -58,4 +58,7 @@ require("lazy").setup({
 		"folke/zen-mode.nvim", 
 		opts = {},
 	},
+
+	-- VimBeGood --
+	{ "ThePrimeagen/vim-be-good", },
 })
