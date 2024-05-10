@@ -30,7 +30,7 @@ require("lazy").setup({
 	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
 	-- fonts and icons --
-	-- {'nvim-tree/nvim-web-devicons', name = "devicons" },
+	{'nvim-tree/nvim-web-devicons', name = "devicons" },
 
 	-- harpoon --
  	{
@@ -45,10 +45,10 @@ require("lazy").setup({
 			{ "<leader>a", function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "harpoon quick menu", },
 			{ "<C-S-P>", function() require("harpoon"):list():prev() end, desc = "harpoon previous file", },
 			{ "<C-S-N>", function() require("harpoon"):list():next() end, desc = "harpoon next file", },
-			{ "<leader>1", function() require("harpoon"):list():select(1) end, desc = "harpoon to file 1", },
-			{ "<leader>2", function() require("harpoon"):list():select(2) end, desc = "harpoon to file 2", },
-			{ "<leader>3", function() require("harpoon"):list():select(3) end, desc = "harpoon to file 3", },
-			{ "<leader>4", function() require("harpoon"):list():select(4) end, desc = "harpoon to file 4", },
+			{ "<C-j>", function() require("harpoon"):list():select(1) end, desc = "harpoon to file 1", },
+			{ "<C-k>", function() require("harpoon"):list():select(2) end, desc = "harpoon to file 2", },
+			{ "<C-l>", function() require("harpoon"):list():select(3) end, desc = "harpoon to file 3", },
+			{ "<C-ö>", function() require("harpoon"):list():select(4) end, desc = "harpoon to file 4", },
 			{ "<leader>5", function() require("harpoon"):list():select(5) end, desc = "harpoon to file 5", },
 		},
 	},
@@ -61,4 +61,7 @@ require("lazy").setup({
 
 	-- VimBeGood --
 	{ "ThePrimeagen/vim-be-good", },
+
+	-- UndoTree --
+	{ "mbbill/undotree", },
 })
