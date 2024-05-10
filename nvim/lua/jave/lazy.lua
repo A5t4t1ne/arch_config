@@ -45,10 +45,10 @@ require("lazy").setup({
 			{ "<leader>a", function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "harpoon quick menu", },
 			{ "<C-S-P>", function() require("harpoon"):list():prev() end, desc = "harpoon previous file", },
 			{ "<C-S-N>", function() require("harpoon"):list():next() end, desc = "harpoon next file", },
-			{ "<C-j>", function() require("harpoon"):list():select(1) end, desc = "harpoon to file 1", },
-			{ "<C-k>", function() require("harpoon"):list():select(2) end, desc = "harpoon to file 2", },
-			{ "<C-l>", function() require("harpoon"):list():select(3) end, desc = "harpoon to file 3", },
-			{ "<C-ö>", function() require("harpoon"):list():select(4) end, desc = "harpoon to file 4", },
+			{ "<C-S-j>", function() require("harpoon"):list():select(1) end, desc = "harpoon to file 1", },
+			{ "<C-S-k>", function() require("harpoon"):list():select(2) end, desc = "harpoon to file 2", },
+			{ "<C-S-l>", function() require("harpoon"):list():select(3) end, desc = "harpoon to file 3", },
+			{ "<C-S-ö>", function() require("harpoon"):list():select(4) end, desc = "harpoon to file 4", },
 			{ "<leader>5", function() require("harpoon"):list():select(5) end, desc = "harpoon to file 5", },
 		},
 	},
@@ -64,4 +64,23 @@ require("lazy").setup({
 
 	-- UndoTree --
 	{ "mbbill/undotree", },
+
+	-- Vim-Tmux-Navigator
+	{
+		"christoomey/vim-tmux-navigator",
+		cmd = {
+			"TmuxNavigateLeft",
+			"TmuxNavigateDown",
+			"TmuxNavigateUp",
+			"TmuxNavigateRight",
+			"TmuxNavigatePrevious",
+		},
+		keys = {
+			{ "<c-j>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+			{ "<c-k>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+			{ "<c-l>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+			{ "<c-ö>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+		},
+	}
 })
