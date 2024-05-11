@@ -41,15 +41,14 @@ require("lazy").setup({
 			require("harpoon"):setup()
 		end,
 		keys = {
-			{ "<leader>A", function() require("harpoon"):list():add() end, desc = "harpoon file", },
-			{ "<leader>a", function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "harpoon quick menu", },
-			{ "<C-S-P>", function() require("harpoon"):list():prev() end, desc = "harpoon previous file", },
-			{ "<C-S-N>", function() require("harpoon"):list():next() end, desc = "harpoon next file", },
-			{ "<C-S-j>", function() require("harpoon"):list():select(1) end, desc = "harpoon to file 1", },
-			{ "<C-S-k>", function() require("harpoon"):list():select(2) end, desc = "harpoon to file 2", },
-			{ "<C-S-l>", function() require("harpoon"):list():select(3) end, desc = "harpoon to file 3", },
-			{ "<C-S-ö>", function() require("harpoon"):list():select(4) end, desc = "harpoon to file 4", },
-			{ "<leader>5", function() require("harpoon"):list():select(5) end, desc = "harpoon to file 5", },
+			{ "<leader>a", function() require("harpoon"):list():add() end, desc = "harpoon file", },
+			{ "<leader>A", function() local harpoon = require("harpoon") harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "harpoon quick menu", },
+			{ "<C-S-p>", function() require("harpoon"):list():prev() end, desc = "harpoon previous file", },
+			{ "<C-n>", function() require("harpoon"):list():next() end, desc = "harpoon next file", },
+			{ "<C-j>", function() require("harpoon"):list():select(1) end, desc = "harpoon to file 1", },
+			{ "<C-k>", function() require("harpoon"):list():select(2) end, desc = "harpoon to file 2", },
+			{ "<C-l>", function() require("harpoon"):list():select(3) end, desc = "harpoon to file 3", },
+			{ "<C-ö>", function() require("harpoon"):list():select(4) end, desc = "harpoon to file 4", },
 		},
 	},
 
@@ -66,21 +65,39 @@ require("lazy").setup({
 	{ "mbbill/undotree", },
 
 	-- Vim-Tmux-Navigator
+-- 	{
+-- 		"christoomey/vim-tmux-navigator",
+-- 		cmd = {
+-- 			"TmuxNavigateLeft",
+-- 			"TmuxNavigateDown",
+-- 			"TmuxNavigateUp",
+-- 			"TmuxNavigateRight",
+-- 			"TmuxNavigatePrevious",
+-- 		},
+-- 		keys = {
+-- 			{ "<c-j>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+-- 			{ "<c-k>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+-- 			{ "<c-l>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+-- 			{ "<c-ö>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+-- 			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+-- 		},
+-- 	},
+
+	-- vim-fugitive --
 	{
-		"christoomey/vim-tmux-navigator",
-		cmd = {
-			"TmuxNavigateLeft",
-			"TmuxNavigateDown",
-			"TmuxNavigateUp",
-			"TmuxNavigateRight",
-			"TmuxNavigatePrevious",
-		},
+		"tpope/vim-fugitive",
 		keys = {
-			{ "<c-j>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-			{ "<c-k>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-			{ "<c-l>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-			{ "<c-ö>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+			{ "<leader>gs", vim.cmd.Git },
 		},
-	}
+	},
+
+	-- lsp --
+	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+	{'neovim/nvim-lspconfig'},
+	{'hrsh7th/cmp-nvim-lsp'},
+	{'hrsh7th/nvim-cmp'},
+	{'L3MON4D3/LuaSnip'},
+
+	-- lsp-servers --
+	{ 'mfussenegger/nvim-jdtls' },
 })
