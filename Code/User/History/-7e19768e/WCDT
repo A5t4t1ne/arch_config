@@ -1,0 +1,7 @@
+CC=gcc
+CFLAGS=-I.
+
+TARGET = main
+
+all: main
+	

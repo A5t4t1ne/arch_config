@@ -1,0 +1,143 @@
+0 verbose cli /home/dave/.config/zed/node/node-v18.15.0-linux-x64/bin/node /home/dave/.config/zed/node/node-v18.15.0-linux-x64/bin/npm
+1 info using npm@9.5.0
+2 info using node@v18.15.0
+3 timing npm:load:whichnode Completed in 1ms
+4 timing config:load:defaults Completed in 0ms
+5 timing config:load:file:/home/dave/.config/zed/node/node-v18.15.0-linux-x64/lib/node_modules/npm/npmrc Completed in 0ms
+6 timing config:load:builtin Completed in 0ms
+7 timing config:load:cli Completed in 1ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:/home/dave/Downloads/zed/script/.npmrc Completed in 0ms
+10 timing config:load:project Completed in 1ms
+11 timing config:load:file:/home/dave/.config/zed/node/node-v18.15.0-linux-x64/blank_user_npmrc Completed in 1ms
+12 timing config:load:user Completed in 1ms
+13 timing config:load:file:/home/dave/.config/zed/node/node-v18.15.0-linux-x64/blank_global_npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:setEnvs Completed in 1ms
+16 timing config:load Completed in 5ms
+17 timing npm:load:configload Completed in 6ms
+18 timing npm:load:mkdirpcache Completed in 0ms
+19 timing npm:load:mkdirplogs Completed in 0ms
+20 verbose title npm info vscode-json-languageserver
+21 verbose argv "info" "--cache" "/home/dave/.config/zed/node/node-v18.15.0-linux-x64/cache" "--userconfig" "/home/dave/.config/zed/node/node-v18.15.0-linux-x64/blank_user_npmrc" "--globalconfig" "/home/dave/.config/zed/node/node-v18.15.0-linux-x64/blank_global_npmrc" "vscode-json-languageserver" "--json" "--fetch-retry-mintimeout" "2000" "--fetch-retry-maxtimeout" "5000" "--fetch-timeout" "5000"
+22 timing npm:load:setTitle Completed in 1ms
+23 timing config:load:flatten Completed in 1ms
+24 timing npm:load:display Completed in 2ms
+25 verbose logfile logs-max:10 dir:/home/dave/.config/zed/node/node-v18.15.0-linux-x64/cache/_logs/2024-04-15T15_23_22_899Z-
+26 verbose logfile /home/dave/.config/zed/node/node-v18.15.0-linux-x64/cache/_logs/2024-04-15T15_23_22_899Z-debug-0.log
+27 timing npm:load:logFile Completed in 3ms
+28 timing npm:load:timers Completed in 0ms
+29 timing npm:load:configScope Completed in 0ms
+30 timing npm:load Completed in 13ms
+31 silly logfile done cleaning log files
+32 http fetch GET 200 https://registry.npmjs.org/vscode-json-languageserver 254ms (cache miss)
+33 silly view {
+33 silly view   '1.3.4': {
+33 silly view     _id: 'vscode-json-languageserver@1.3.4',
+33 silly view     _rev: '89-ad532c4953f078a8655bb732f8de1e34',
+33 silly view     name: 'vscode-json-languageserver',
+33 silly view     'dist-tags': { next: '1.0.0-next.3', latest: '1.3.4' },
+33 silly view     versions: [
+33 silly view       '1.0.0-next.1', '1.0.0-next.2',
+33 silly view       '1.0.0-next.3', '1.0.0',
+33 silly view       '1.0.1',        '1.2.0',
+33 silly view       '1.2.1',        '1.2.2',
+33 silly view       '1.2.3',        '1.3.0',
+33 silly view       '1.3.1',        '1.3.4'
+33 silly view     ],
+33 silly view     time: {
+33 silly view       created: '2018-03-21T09:44:29.703Z',
+33 silly view       '1.0.0-next.1': '2018-03-21T09:44:29.810Z',
+33 silly view       modified: '2022-05-23T11:03:15.875Z',
+33 silly view       '1.0.0-next.2': '2018-03-21T10:13:32.353Z',
+33 silly view       '1.0.0-next.3': '2018-03-21T10:19:59.039Z',
+33 silly view       '1.0.0': '2018-03-21T15:03:53.142Z',
+33 silly view       '1.0.1': '2018-03-21T15:27:16.822Z',
+33 silly view       '1.2.0': '2019-07-19T08:35:08.286Z',
+33 silly view       '1.2.1': '2019-07-22T08:09:10.447Z',
+33 silly view       '1.2.2': '2019-10-10T07:27:10.327Z',
+33 silly view       '1.2.3': '2020-02-17T15:00:42.762Z',
+33 silly view       '1.3.0': '2020-10-01T19:12:52.683Z',
+33 silly view       '1.3.1': '2020-10-02T13:32:22.406Z',
+33 silly view       '1.3.4': '2021-02-22T14:04:08.899Z'
+33 silly view     },
+33 silly view     maintainers: [
+33 silly view       [Object], [Object],
+33 silly view       [Object], [Object],
+33 silly view       [Object], [Object],
+33 silly view       [Object], [Object],
+33 silly view       [Object], [Object],
+33 silly view       [Object], [Object]
+33 silly view     ],
+33 silly view     description: 'JSON language server',
+33 silly view     author: { name: 'Microsoft Corporation' },
+33 silly view     license: 'MIT',
+33 silly view     readmeFilename: 'README.md',
+33 silly view     _contentLength: 0,
+33 silly view     version: '1.3.4',
+33 silly view     engines: { node: '*' },
+33 silly view     bin: {
+33 silly view       'vscode-json-languageserver': './bin/vscode-json-languageserver'
+33 silly view     },
+33 silly view     main: './out/node/jsonServerMain',
+33 silly view     dependencies: {
+33 silly view       'jsonc-parser': '^3.0.0',
+33 silly view       'request-light': '^0.4.0',
+33 silly view       'vscode-json-languageservice': '^4.0.2',
+33 silly view       'vscode-languageserver': '^7.0.0',
+33 silly view       'vscode-uri': '^3.0.2'
+33 silly view     },
+33 silly view     devDependencies: { '@types/mocha': '^8.2.0', '@types/node': '^12.19.9' },
+33 silly view     scripts: {
+33 silly view       prepublishOnly: 'npm run clean && npm run compile',
+33 silly view       compile: 'npx gulp compile-extension:json-language-features-server',
+33 silly view       watch: 'npx gulp watch-extension:json-language-features-server',
+33 silly view       clean: '../../../node_modules/.bin/rimraf out',
+33 silly view       'install-service-next': 'yarn add vscode-json-languageservice@next',
+33 silly view       'install-service-local': 'yarn link vscode-json-languageservice',
+33 silly view       'install-server-next': 'yarn add vscode-languageserver@next',
+33 silly view       'install-server-local': 'yarn link vscode-languageserver-server',
+33 silly view       version: 'git commit -m "JSON Language Server $npm_package_version" package.json'
+33 silly view     },
+33 silly view     _nodeVersion: '12.4.0',
+33 silly view     _npmVersion: '6.9.0',
+33 silly view     dist: {
+33 silly view       integrity: 'sha512-+ghebnslXk6fVDySBrT0BVqozLDdmKY/qxgkDD4JtOQcU2vXc3e7jh7YyMxvuvE93E9OLvBqUrvajttj8xf3BA==',
+33 silly view       shasum: '8b945d114caaef3c124306017d13e00b3bb1d2ef',
+33 silly view       tarball: 'https://registry.npmjs.org/vscode-json-languageserver/-/vscode-json-languageserver-1.3.4.tgz',
+33 silly view       fileCount: 11,
+33 silly view       unpackedSize: 51227,
+33 silly view       'npm-signature': '-----BEGIN PGP SIGNATURE-----\r\n' +
+33 silly view         'Version: OpenPGP.js v3.0.13\r\n' +
+33 silly view         'Comment: https://openpgpjs.org\r\n' +
+33 silly view         '\r\n' +
+33 silly view         'wsFcBAEBCAAQBQJgM7nZCRA9TVsSAnZWagAAhJIQAIOdzw2pqaAbAfOGOCzn\n' +
+33 silly view         'XY0Amw98mtaLBstekIjL4ONz4Y1d62Zqka011M+WEOWDdiSAsx6KmENOKpYZ\n' +
+33 silly view         'tBa6ZaCsL2SXQdw9o8E1RoX7DmbQkNYOW+C0/6ZjKN8YsLTdMwmOFv0HU2HL\n' +
+33 silly view         'suclYUM0yHIHJsSn6do5qD9ifechQ17AD9ABX2M8pi/9FX4w/xOdVuPzQ13t\n' +
+33 silly view         'fbW6MXwub0gsv+XPgwsSGzWMsXl4Unq7SCpBU5JSHEXpHylaSvEY+FS85KF5\n' +
+33 silly view         'Q51xvyQWloMCFMSXgM8j5lpnRlidiLb/UN7y6j2wizUP+aiA+HazCu042xMa\n' +
+33 silly view         'XpCw2XQYjehUCFJjR3Cx9N8TbIEkQLlm8DmOUmSrUaDy+zCc8q9FizirBbgi\n' +
+33 silly view         'G+4aLQo4vIGCDne6EPS5QbzZBQ5K3iodIVy6uaMOGF9JlJbo1W7O8yvpwym0\n' +
+33 silly view         '2BHxYA+riIqcVr9xuG25RSTlGCTaX9TKdMQgCHahtPPOw2dDlUzTsL6IA4To\n' +
+33 silly view         'Nh+xxJP0y38zCFS2r7CsJwss4jhY4zv6Ke/Yl6HdbeoszMCyHt4N2v1qQc6b\n' +
+33 silly view         'wap7lZH6ZH6eVz9qr4ZSFLhNLQy35LOkv+VukAJ5AY/cmr9iLsBfLLTJFss0\n' +
+33 silly view         'afbFR3qyhS44NQtUGVEyVcwNuGsCTOiyD5c8vRMj7bmLijET6TzG5f25go3d\n' +
+33 silly view         'CjsG\r\n' +
+33 silly view         '=xcX8\r\n' +
+33 silly view         '-----END PGP SIGNATURE-----\r\n',
+33 silly view       signatures: [Array]
+33 silly view     },
+33 silly view     _npmUser: { name: 'aeschli', email: 'martinae@microsoft.com' },
+33 silly view     directories: {},
+33 silly view     _npmOperationalInternal: {
+33 silly view       host: 's3://npm-registry-packages',
+33 silly view       tmp: 'tmp/vscode-json-languageserver_1.3.4_1614002648300_0.9842558362302787'
+33 silly view     },
+33 silly view     _hasShrinkwrap: false
+33 silly view   }
+33 silly view }
+34 timing command:info Completed in 263ms
+35 verbose exit 0
+36 timing npm Completed in 282ms
+37 info ok

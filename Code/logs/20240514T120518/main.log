@@ -1,0 +1,39 @@
+2024-05-14 12:05:18.548 [info] update#setState idle
+2024-05-14 12:05:48.549 [info] update#setState checking for updates
+2024-05-14 12:05:48.584 [info] update#setState idle
+2024-05-14 13:05:48.572 [info] update#setState checking for updates
+2024-05-14 13:05:48.960 [info] update#setState idle
+2024-05-14 14:05:48.595 [info] update#setState checking for updates
+2024-05-14 14:05:48.995 [info] update#setState idle
+2024-05-14 15:03:46.818 [info] Extension host with pid 274841 exited with code: 0, signal: unknown.
+2024-05-14 15:03:46.861 [info] Extension host with pid 274794 exited with code: 0, signal: unknown.
+2024-05-14 15:05:48.607 [info] update#setState checking for updates
+2024-05-14 15:05:49.073 [info] update#setState idle
+2024-05-14 16:05:48.608 [info] update#setState checking for updates
+2024-05-14 16:05:49.004 [info] update#setState idle
+2024-05-14 17:05:48.611 [info] update#setState checking for updates
+2024-05-14 17:05:49.061 [info] update#setState idle
+2024-05-15 12:53:03.527 [info] Extension host with pid 233022 exited with code: 0, signal: unknown.
+2024-05-15 12:53:03.617 [info] Extension host with pid 233001 exited with code: 0, signal: unknown.
+2024-05-15 12:54:28.136 [info] update#setState checking for updates
+2024-05-15 12:54:28.181 [info] update#setState idle
+2024-05-15 13:54:28.139 [info] update#setState checking for updates
+2024-05-15 13:54:28.529 [info] update#setState idle
+2024-05-15 14:54:28.143 [info] update#setState checking for updates
+2024-05-15 14:54:28.533 [info] update#setState idle
+2024-05-15 15:54:28.146 [info] update#setState checking for updates
+2024-05-15 15:54:28.555 [info] update#setState idle
+2024-05-15 16:54:28.149 [info] update#setState checking for updates
+2024-05-15 16:54:28.546 [info] update#setState idle
+2024-05-15 16:56:59.843 [info] Extension host with pid 377467 exited with code: 0, signal: unknown.
+2024-05-15 16:56:59.867 [info] Extension host with pid 377444 exited with code: 0, signal: unknown.
+2024-05-15 18:38:47.158 [warning] No ptyHost heartbeat after 6 seconds
+2024-05-15 18:47:00.091 [info] Extension host with pid 378734 exited with code: 0, signal: unknown.
+2024-05-15 18:47:04.189 [info] Extension host with pid 378711 exited with code: 0, signal: unknown.
+2024-05-15 18:47:04.191 [error] Extension host with pid 378734 still exists, forcefully killing it...
+2024-05-15 18:47:04.191 [warning] No ptyHost heartbeat after 6 seconds
+2024-05-15 18:47:29.667 [info] Extension host with pid 377872 exited with code: 0, signal: unknown.
+2024-05-15 18:47:31.855 [error] Blocked vscode-file request vscode-file://vscode-app/opt/visual-studio-code/resources/app/out/vs/base/worker/workerMain.js#editorWorkerService
+2024-05-15 18:47:31.858 [info] Extension host with pid 377836 exited with code: 0, signal: unknown.
+2024-05-15 18:47:31.859 [error] Extension host with pid 377872 still exists, forcefully killing it...
+2024-05-15 18:47:32.859 [error] Extension host with pid 377836 still exists, forcefully killing it...

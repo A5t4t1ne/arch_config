@@ -1,0 +1,234 @@
+2024-05-17 10:39:48.604 [info] Using settings sync service https://vscode-sync.trafficmanager.net/
+2024-05-17 10:39:48.605 [info] Auto Sync is enabled.
+2024-05-17 10:39:48.605 [info] Auto Sync: Suspended until auth token is available.
+2024-05-17 10:39:48.974 [info] Deleting non existing profile from backup /home/dave/.config/Code/User/sync/extensions
+2024-05-17 10:39:48.987 [info] Deleting non existing profile from backup /home/dave/.config/Code/User/sync/globalState
+2024-05-17 10:39:48.989 [info] Deleting non existing profile from backup /home/dave/.config/Code/User/sync/keybindings
+2024-05-17 10:39:48.989 [info] Deleting non existing profile from backup /home/dave/.config/Code/User/sync/profiles
+2024-05-17 10:39:48.990 [info] Deleting non existing profile from backup /home/dave/.config/Code/User/sync/settings
+2024-05-17 10:39:48.991 [info] Deleting non existing profile from backup /home/dave/.config/Code/User/sync/snippets
+2024-05-17 10:39:48.992 [info] Deleting non existing profile from backup /home/dave/.config/Code/User/sync/tasks
+2024-05-17 10:39:52.268 [info] Auto Sync: Triggered by Interval
+2024-05-17 10:39:52.268 [info] Sync started.
+2024-05-17 10:39:52.494 [info] Settings: Last sync resource does not exist locally.
+2024-05-17 10:39:52.963 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:39:52.983 [info] Keybindings: Last sync resource does not exist locally.
+2024-05-17 10:39:53.080 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:39:53.082 [info] Snippets: Last sync resource does not exist locally.
+2024-05-17 10:39:53.214 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:39:53.245 [info] Tasks: Last sync resource does not exist locally.
+2024-05-17 10:39:53.298 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:39:53.298 [info] GlobalState: Last sync resource does not exist locally.
+2024-05-17 10:39:54.009 [info] GlobalState: Updated remote ui state. Updated: cpp.1.lastSessionDate,cpp.1.sessionCount,java.2.lastSessionDate,java.2.sessionCount,javascript.1.lastSessionDate,javascript.1.sessionCount,typescript.1.lastSessionDate,typescript.1.sessionCount,csharp.1.lastSessionDate,csharp.1.sessionCount.
+2024-05-17 10:39:54.014 [info] GlobalState: Updated last synchronized ui state
+2024-05-17 10:39:54.018 [info] Extensions: Last sync resource does not exist locally.
+2024-05-17 10:39:54.181 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:39:54.184 [info] Profiles: Last sync resource does not exist locally.
+2024-05-17 10:39:54.226 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:39:54.227 [info] Sync done. Took 1959ms
+2024-05-17 10:40:58.701 [info] Auto Sync: Triggered by Activity
+2024-05-17 10:40:58.701 [info] Sync started.
+2024-05-17 10:40:58.781 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:40:58.785 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:40:58.788 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:40:58.789 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:40:59.305 [info] GlobalState: Updated remote ui state. Updated: extension.features.state,languageModelStats.copilot-gpt-4.
+2024-05-17 10:40:59.311 [info] GlobalState: Updated last synchronized ui state
+2024-05-17 10:40:59.415 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:40:59.416 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:40:59.417 [info] Sync done. Took 717ms
+2024-05-17 10:41:27.678 [info] Auto Sync: Triggered by Activity
+2024-05-17 10:41:27.679 [info] Sync started.
+2024-05-17 10:41:27.754 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:41:27.758 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:41:27.760 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:41:27.761 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:41:28.286 [info] GlobalState: Updated remote ui state. Updated: extension.features.state,languageModelStats.copilot-gpt-3.5-turbo.
+2024-05-17 10:41:28.291 [info] GlobalState: Updated last synchronized ui state
+2024-05-17 10:41:28.397 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:41:28.398 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:41:28.399 [info] Sync done. Took 721ms
+2024-05-17 10:41:39.559 [info] Auto Sync: Triggered by Activity
+2024-05-17 10:41:39.559 [info] Sync started.
+2024-05-17 10:41:39.654 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:41:39.657 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:41:39.658 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:41:39.660 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:41:39.662 [info] GlobalState: No changes found during synchronizing ui state.
+2024-05-17 10:41:39.744 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:41:39.745 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:41:39.746 [info] Sync done. Took 188ms
+2024-05-17 10:42:44.985 [info] Auto Sync: Triggered by Activity
+2024-05-17 10:42:44.985 [info] Sync started.
+2024-05-17 10:42:45.093 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:42:45.096 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:42:45.098 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:42:45.099 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:42:45.101 [info] GlobalState: No changes found during synchronizing ui state.
+2024-05-17 10:42:45.179 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:42:45.180 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:42:45.181 [info] Sync done. Took 197ms
+2024-05-17 10:42:57.121 [info] Auto Sync: Triggered by Activity
+2024-05-17 10:42:57.121 [info] Sync started.
+2024-05-17 10:42:57.198 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:42:57.201 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:42:57.202 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:42:57.204 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:42:57.206 [info] GlobalState: No changes found during synchronizing ui state.
+2024-05-17 10:42:57.290 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:42:57.292 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:42:57.293 [info] Sync done. Took 172ms
+2024-05-17 10:43:23.451 [info] Auto Sync: Triggered by Activity
+2024-05-17 10:43:23.451 [info] Sync started.
+2024-05-17 10:43:23.538 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:43:23.543 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:43:23.547 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:43:23.549 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:43:23.551 [info] GlobalState: No changes found during synchronizing ui state.
+2024-05-17 10:43:23.646 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:43:23.647 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:43:23.648 [info] Sync done. Took 197ms
+2024-05-17 10:44:19.455 [info] Auto Sync: Triggered by Activity
+2024-05-17 10:44:19.455 [info] Sync started.
+2024-05-17 10:44:19.528 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:44:19.530 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:44:19.531 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:44:19.532 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:44:19.536 [info] GlobalState: No changes found during synchronizing ui state.
+2024-05-17 10:44:19.619 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:44:19.619 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:44:19.620 [info] Sync done. Took 166ms
+2024-05-17 10:45:02.005 [info] Auto Sync: Triggered by Activity
+2024-05-17 10:45:02.006 [info] Sync started.
+2024-05-17 10:45:02.086 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:45:02.089 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:45:02.090 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:45:02.092 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:45:02.613 [info] GlobalState: Updated remote ui state. Updated: extension.features.state,languageModelStats.copilot-gpt-4.
+2024-05-17 10:45:02.619 [info] GlobalState: Updated last synchronized ui state
+2024-05-17 10:45:02.717 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:45:02.719 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:45:02.720 [info] Sync done. Took 716ms
+2024-05-17 10:45:29.756 [info] Auto Sync: Triggered by Activity
+2024-05-17 10:45:29.756 [info] Sync started.
+2024-05-17 10:45:29.839 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:45:29.842 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:45:29.844 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:45:29.846 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:45:30.467 [info] GlobalState: Updated remote ui state. Updated: extension.features.state,languageModelStats.copilot-gpt-3.5-turbo.
+2024-05-17 10:45:30.472 [info] GlobalState: Updated last synchronized ui state
+2024-05-17 10:45:30.562 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:45:30.562 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:45:30.563 [info] Sync done. Took 808ms
+2024-05-17 10:47:09.929 [info] Auto Sync: Triggered by Activity
+2024-05-17 10:47:09.929 [info] Sync started.
+2024-05-17 10:47:10.013 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:47:10.016 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:47:10.017 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:47:10.018 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:47:10.021 [info] GlobalState: No changes found during synchronizing ui state.
+2024-05-17 10:47:10.112 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:47:10.112 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:47:10.113 [info] Sync done. Took 185ms
+2024-05-17 10:47:36.735 [info] Auto Sync: Triggered by Activity
+2024-05-17 10:47:36.735 [info] Sync started.
+2024-05-17 10:47:36.813 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:47:36.816 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:47:36.818 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:47:36.819 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:47:37.342 [info] GlobalState: Updated remote ui state. Updated: extension.features.state,languageModelStats.copilot-gpt-4.
+2024-05-17 10:47:37.347 [info] GlobalState: Updated last synchronized ui state
+2024-05-17 10:47:37.450 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:47:37.450 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:47:37.451 [info] Sync done. Took 717ms
+2024-05-17 10:47:46.258 [info] Auto Sync: Triggered by Activity
+2024-05-17 10:47:46.258 [info] Sync started.
+2024-05-17 10:47:46.331 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:47:46.335 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:47:46.337 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:47:46.338 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:47:46.968 [info] GlobalState: Updated remote ui state. Updated: extension.features.state,languageModelStats.copilot-gpt-3.5-turbo.
+2024-05-17 10:47:46.973 [info] GlobalState: Updated last synchronized ui state
+2024-05-17 10:47:47.071 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:47:47.072 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:47:47.073 [info] Sync done. Took 815ms
+2024-05-17 10:48:05.481 [info] Auto Sync: Triggered by Activity
+2024-05-17 10:48:05.482 [info] Sync started.
+2024-05-17 10:48:05.559 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:48:05.562 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:48:05.563 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:48:05.565 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:48:05.567 [info] GlobalState: No changes found during synchronizing ui state.
+2024-05-17 10:48:05.651 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:48:05.652 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:48:05.653 [info] Sync done. Took 173ms
+2024-05-17 10:53:05.671 [info] Auto Sync: Triggered by Interval
+2024-05-17 10:53:05.671 [info] Sync started.
+2024-05-17 10:53:05.851 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:53:05.854 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:53:05.855 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:53:05.857 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:53:05.859 [info] GlobalState: No changes found during synchronizing ui state.
+2024-05-17 10:53:05.937 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:53:05.938 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:53:05.939 [info] Sync done. Took 269ms
+2024-05-17 10:58:05.952 [info] Auto Sync: Triggered by Interval
+2024-05-17 10:58:05.952 [info] Sync started.
+2024-05-17 10:58:06.311 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 10:58:06.313 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 10:58:06.315 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 10:58:06.316 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 10:58:06.319 [info] GlobalState: No changes found during synchronizing ui state.
+2024-05-17 10:58:06.403 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 10:58:06.405 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 10:58:06.406 [info] Sync done. Took 455ms
+2024-05-17 11:03:06.422 [info] Auto Sync: Triggered by Interval
+2024-05-17 11:03:06.422 [info] Sync started.
+2024-05-17 11:03:06.584 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 11:03:06.587 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 11:03:06.589 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 11:03:06.590 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 11:03:06.592 [info] GlobalState: No changes found during synchronizing ui state.
+2024-05-17 11:03:06.674 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 11:03:06.674 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 11:03:06.675 [info] Sync done. Took 254ms
+2024-05-17 11:08:06.691 [info] Auto Sync: Triggered by Interval
+2024-05-17 11:08:06.691 [info] Sync started.
+2024-05-17 11:08:06.851 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 11:08:06.854 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 11:08:06.856 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 11:08:06.857 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 11:08:06.860 [info] GlobalState: No changes found during synchronizing ui state.
+2024-05-17 11:08:06.955 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 11:08:06.956 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 11:08:06.957 [info] Sync done. Took 265ms
+2024-05-17 11:13:06.975 [info] Auto Sync: Triggered by Interval
+2024-05-17 11:13:06.976 [info] Sync started.
+2024-05-17 11:13:07.157 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 11:13:07.160 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 11:13:07.161 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 11:13:07.163 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 11:13:07.165 [info] GlobalState: No changes found during synchronizing ui state.
+2024-05-17 11:13:07.245 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 11:13:07.246 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 11:13:07.246 [info] Sync done. Took 272ms
+2024-05-17 11:18:07.254 [info] Auto Sync: Triggered by Interval
+2024-05-17 11:18:07.254 [info] Sync started.
+2024-05-17 11:18:07.427 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 11:18:07.429 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 11:18:07.431 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 11:18:07.433 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 11:18:07.435 [info] GlobalState: No changes found during synchronizing ui state.
+2024-05-17 11:18:07.516 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 11:18:07.517 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 11:18:07.517 [info] Sync done. Took 264ms
+2024-05-17 11:23:07.535 [info] Auto Sync: Triggered by Interval
+2024-05-17 11:23:07.535 [info] Sync started.
+2024-05-17 11:23:07.723 [info] Settings: No changes found during synchronizing settings.
+2024-05-17 11:23:07.725 [info] Keybindings: No changes found during synchronizing keybindings.
+2024-05-17 11:23:07.727 [info] Snippets: No changes found during synchronizing snippets.
+2024-05-17 11:23:07.728 [info] Tasks: No changes found during synchronizing tasks.
+2024-05-17 11:23:07.730 [info] GlobalState: No changes found during synchronizing ui state.
+2024-05-17 11:23:07.812 [info] Extensions: No changes found during synchronizing extensions.
+2024-05-17 11:23:07.812 [info] Profiles: No changes found during synchronizing profiles.
+2024-05-17 11:23:07.813 [info] Sync done. Took 279ms

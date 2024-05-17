@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/dave/Desktop/hurti-hurti'
+as   -o main.o main.s
+gcc -o main main.o -I.
+make: Leaving directory '/home/dave/Desktop/hurti-hurti'
+ 

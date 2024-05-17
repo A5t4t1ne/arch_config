@@ -1,0 +1,30 @@
+ls
+cd /var/www/html
+nano index.html
+ls -la
+sudo apt-get update
+sudo apt-get upgrade
+git status
+git add .
+git commit -m "Update index.html"
+git push origin master
+mkdir test-directory
+rmdir test-directory
+touch test-file.txt
+rm test-file.txt
+history
+top
+ps aux
+netstat -tuln
+df -h
+ls
+cd Documents
+mkdir Project
+cd Project
+touch main.py
+nano main.py
+python3 /root/main.py
+su root
+I_4m_7h3_gr34t3st_0f_7h3m_4ll
+aaaarargggh
+why can't I be root but Quill can?

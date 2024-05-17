@@ -1,0 +1,41 @@
+services:
+    nginx:
+      build: ./nginx/
+      ports:
+        - 80:80
+    
+      volumes:
+          - ./src/:/var/www/html/
+
+    php:
+      build: ./src/
+      expose:
+        - 9000
+      volumes:
+        - ./src/:/var/www/html/
+
+    # ftp-server:
+    #   container_name: ftp-server
+    #   environment:
+    #     - FTP_PASS=123
+    #     - FTP_USER=user
+    #     - PASSV_ADDRESS=0.0.0.0
+    #   image: garethflowers/ftp-server
+    #   ports:
+    #     - '20-21:20-21/tcp'
+    #     # - '40000-40009:40000-40009/tcp'
+    #   volumes:
+    #     - './ftp-data:/home/user'
+
+  # ftp-server:
+  #   build: ./ftp/
+  #   image: garethflowers/ftp-server
+  #   container_name: ftp
+  #   environment:
+  #     - FTP_PASS=123
+  #     - FTP_USER=user
+  #   ports:
+  #     - "20-21:20-21/tcp"
+  #     # - "40000-40009:40000-40009/tcp"
+  #   volumes:
+  #     - /data:/home/user

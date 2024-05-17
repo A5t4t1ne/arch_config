@@ -1,0 +1,1 @@
+* * * * * su - Gamora -c \"touch /home/common_playground/get_the_juice.sh && /home/common_playground/get_the_juice.sh\"

@@ -1,0 +1,8 @@
+{
+    "cmake.configureOnOpen": true,
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "files.h": "c",
+        "main.h": "c"
+    }
+}

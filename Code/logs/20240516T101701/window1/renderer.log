@@ -1,0 +1,76 @@
+2024-05-16 10:17:02.676 [info] Started local extension host with pid 103262.
+2024-05-16 10:17:02.785 [error] Extension 'github.copilot-chat' appears in product.json but enables LESS API proposals than the extension wants.
+package.json (LOSES): extensionsAny, newSymbolNamesProvider, interactive, chatProvider, codeActionAI, findTextInFiles, findFiles2, textSearchProvider, terminalDataWriteEvent, terminalExecuteCommandEvent, terminalSelection, terminalQuickFixProvider, mappedEditsProvider, aiRelatedInformation, chatParticipant, chatParticipantAdditions, defaultChatParticipant, chatVariableResolver, contribSourceControlInputBoxMenu, authLearnMore, testObserver, aiTextSearchProvider
+product.json (WINS): interactive, terminalDataWriteEvent, terminalExecuteCommandEvent, terminalSelection, terminalQuickFixProvider, chatParticipant, chatParticipantAdditions, defaultChatParticipant, chatVariableResolver, chatProvider, mappedEditsProvider, aiRelatedInformation, codeActionAI, findTextInFiles, textSearchProvider, contribSourceControlInputBoxMenu, newSymbolNamesProvider, findFiles2, extensionsAny, authLearnMore, testObserver
+2024-05-16 10:17:02.790 [info] Placing extension(s) asvetliakov.vscode-neovim on a separate extension host.
+2024-05-16 10:17:02.805 [warning] [twxs.cmake]: Cannot register 'cmake.cmakePath'. This property is already registered.
+2024-05-16 10:17:02.816 [error] Ignoring latex-workshop.synctex.indicator.enabled as latex-workshop.synctex.indicator is "rectangle"
+2024-05-16 10:17:03.174 [info] Started local extension host with pid 103309.
+2024-05-16 10:17:04.018 [error] [Extension Host] /bin/sh: line 1: php: command not found
+2024-05-16 10:17:05.294 [error] Ignoring latex-workshop.synctex.indicator.enabled as latex-workshop.synctex.indicator is "rectangle"
+2024-05-16 10:17:05.508 [info] [perf] Render performance baseline is 26ms
+2024-05-16 10:17:05.554 [error] [Extension Host] [chat] Registration of interactive providers failed: Error: Extension 'GitHub.copilot-chat' CANNOT use API proposal: aiTextSearchProvider.
+Its package.json#enabledApiProposals-property declares: interactive, terminalDataWriteEvent, terminalExecuteCommandEvent, terminalSelection, terminalQuickFixProvider, chatParticipant, chatParticipantAdditions, defaultChatParticipant, chatVariableResolver, chatProvider, mappedEditsProvider, aiRelatedInformation, codeActionAI, findTextInFiles, textSearchProvider, contribSourceControlInputBoxMenu, newSymbolNamesProvider, findFiles2, extensionsAny, authLearnMore, testObserver but NOT aiTextSearchProvider.
+ The missing proposal MUST be added and you must start in extension development mode or use the following command line switch: --enable-proposed-api GitHub.copilot-chat
+2024-05-16 10:17:06.065 [warning] [cmake-tools]: Couldn't find message for key cmake-tools.configuration.cmake.options.advanced.statusBarLength.description.
+2024-05-16 10:17:06.065 [warning] [cmake-tools]: Couldn't find message for key cmake-tools.configuration.cmake.options.advanced.statusBarLength.description.
+2024-05-16 10:17:06.065 [warning] [cmake-tools]: Couldn't find message for key cmake-tools.configuration.cmake.options.advanced.statusBarLength.description.
+2024-05-16 10:17:06.065 [warning] [cmake-tools]: Couldn't find message for key cmake-tools.configuration.cmake.options.advanced.statusBarLength.description.
+2024-05-16 10:17:06.065 [warning] [cmake-tools]: Couldn't find message for key cmake-tools.configuration.cmake.options.advanced.statusBarLength.description.
+2024-05-16 10:17:06.065 [warning] [cmake-tools]: Couldn't find message for key cmake-tools.configuration.cmake.options.advanced.statusBarLength.description.
+2024-05-16 10:17:06.065 [warning] [cmake-tools]: Couldn't find message for key cmake-tools.configuration.cmake.options.advanced.statusBarLength.description.
+2024-05-16 10:17:06.065 [warning] [cmake-tools]: Couldn't find message for key cmake-tools.configuration.cmake.options.advanced.statusBarLength.description.
+2024-05-16 10:17:06.066 [warning] [cmake-tools]: Couldn't find message for key cmake-tools.configuration.cmake.options.advanced.statusBarLength.description.
+2024-05-16 10:17:06.066 [warning] [cmake-tools]: Couldn't find message for key cmake-tools.configuration.cmake.options.advanced.statusBarLength.description.
+2024-05-16 10:17:06.066 [warning] [cmake-tools]: Couldn't find message for key cmake-tools.configuration.cmake.options.advanced.statusBarLength.description.
+2024-05-16 10:17:06.066 [warning] [cmake-tools]: Couldn't find message for key cmake-tools.configuration.cmake.options.advanced.statusBarLength.description.
+2024-05-16 10:17:17.575 [error] [ExtensionListenerError] Extension 'Cameron.vscode-pytest' FAILED to handle event: TypeError: Cannot read properties of undefined (reading 'document'): Error: [ExtensionListenerError] Extension 'Cameron.vscode-pytest' FAILED to handle event: TypeError: Cannot read properties of undefined (reading 'document')
+    at a.value (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:163:20680)
+    at o.y (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:660)
+    at o.z (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:730)
+    at o.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:946)
+    at a.value (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:155:29820)
+    at o.y (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:660)
+    at o.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:877)
+    at n.acceptDocumentsAndEditorsDelta (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:155:28711)
+    at n.$acceptDocumentsAndEditorsDelta (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:155:27093)
+    at c.S (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:150:5505)
+    at c.Q (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:150:5271)
+    at c.M (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:150:4361)
+    at c.L (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:150:3440)
+    at a.value (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:150:2227)
+    at o.y (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:660)
+    at o.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:877)
+    at u.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:107:14175)
+    at a.value (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:176:8023)
+    at o.y (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:660)
+    at o.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:877)
+    at u.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:107:14175)
+    at MessagePortMain.<anonymous> (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:176:6303)
+    at MessagePortMain.emit (node:events:517:28)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2285)
+2024-05-16 10:17:17.575 [error] [ExtensionListenerError] Extension 'pamaron.pytest-runner' FAILED to handle event: TypeError: Cannot read properties of undefined (reading 'document'): Error: [ExtensionListenerError] Extension 'pamaron.pytest-runner' FAILED to handle event: TypeError: Cannot read properties of undefined (reading 'document')
+    at a.value (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:163:20680)
+    at o.y (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:660)
+    at o.z (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:730)
+    at o.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:946)
+    at a.value (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:155:29820)
+    at o.y (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:660)
+    at o.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:877)
+    at n.acceptDocumentsAndEditorsDelta (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:155:28711)
+    at n.$acceptDocumentsAndEditorsDelta (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:155:27093)
+    at c.S (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:150:5505)
+    at c.Q (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:150:5271)
+    at c.M (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:150:4361)
+    at c.L (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:150:3440)
+    at a.value (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:150:2227)
+    at o.y (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:660)
+    at o.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:877)
+    at u.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:107:14175)
+    at a.value (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:176:8023)
+    at o.y (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:660)
+    at o.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:82:877)
+    at u.fire (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:107:14175)
+    at MessagePortMain.<anonymous> (/opt/visual-studio-code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:176:6303)
+    at MessagePortMain.emit (node:events:517:28)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2285)

@@ -1,0 +1,49 @@
+[12:05:19.796][Logger] New log placeholder %WS1% registered for /home/dave/hslu/SEM4/KRYPTO/Zusammenfassung .
+[12:05:19.796][Extension] Initializing LaTeX Workshop.
+[12:05:19.859][Build][Recipe] Set $LATEXWORKSHOP_DOCKER_LATEX: ""
+[12:05:19.881][Server] Creating LaTeX Workshop http and websocket server.
+[12:05:19.937][Format][Bib] Bibtex format config: {"tab":"  ","case":"lowercase","left":"{","right":"}","trailingComma":false,"sort":["key"],"alignOnEqual":true,"sortFields":false,"fieldsOrder":[],"firstEntries":["string","xdata"]}
+[12:05:19.965][Server] Server successfully started: {"address":"127.0.0.1","family":"IPv4","port":43457} .
+[12:05:19.983][Extension] Extension root: /home/dave/.vscode/extensions/james-yu.latex-workshop-9.20.1
+[12:05:19.984][Extension] $PATH: /home/dave/.local/share/bob/nvim-bin:/usr/lib/jvm/java-21-openjdk/bin:/home/dave/.local/bin:/home/dave/.local/share/gem/ruby/3.0.0/bin:/usr/local/texlive/2023/texmf-dist/doc/info/:/usr/local/texlive/2023/texmf-dist/doc/man:/usr/local/texlive/2023/bin/x86_64-linux:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/lib/rustup/bin
+[12:05:19.984][Extension] $SHELL: /usr/bin/fish
+[12:05:19.984][Extension] $LANG: en_US.UTF-8
+[12:05:19.984][Extension] $LC_ALL: undefined
+[12:05:19.984][Extension] process.platform: linux
+[12:05:19.984][Extension] process.arch: x64
+[12:05:19.985][Extension] vscode.env.appName: Visual Studio Code
+[12:05:19.985][Extension] vscode.env.remoteName: undefined
+[12:05:19.985][Extension] vscode.env.uiKind: 1
+[12:05:20.002][Config] latex-workshop.latex.outDir: "./build" .
+[12:05:20.061][Extension] Trigger characters for intellisense of LaTeX documents: ["\\",",","{"]
+[12:05:20.063][Root] Current workspace folders: ["file://%WS1%"]
+[12:05:20.063][Extension] LaTeX Workshop initialized.
+[12:05:20.064][Root] Found root file from active editor: %WS1%/Formelsammlung.tex
+[12:05:20.064][Root] Root file changed: from %WS1%/Formelsammlung.tex to %WS1%/Formelsammlung.tex, langID latex . Refresh dependencies
+[12:05:20.064][Event] ROOT_FILE_CHANGED: "%WS1%/Formelsammlung.tex"
+[12:05:20.064][Cacher][Watcher] Reset.
+[12:05:20.065][Cacher][Watcher] Reset.
+[12:05:20.067][Cacher] Adding %WS1%/Formelsammlung.tex .
+[12:05:20.068][Cacher][Watcher] Watched %WS1%/Formelsammlung.tex with a new .* watcher on %WS1% .
+[12:05:20.068][Event] FILE_WATCHED: "%WS1%/Formelsammlung.tex"
+[12:05:20.069][Cacher] Caching %WS1%/Formelsammlung.tex .
+[12:05:20.070][Cacher] Updated inputs of %WS1%/Formelsammlung.tex .
+[12:05:20.070][Cacher] Parse LaTeX AST: %WS1%/Formelsammlung.tex .
+[12:05:20.070][Event] ROOT_FILE_SEARCHED
+[12:05:20.078][Server] valdOrigin is http://127.0.0.1:43457
+[12:05:20.142][Cacher] Parsed LaTeX AST: %WS1%/Formelsammlung.tex .
+[12:05:20.143][File] Calling kpsewhich to resolve scrartcl.cls .
+[12:05:20.305][File] kpsewhich returned with '/usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrartcl.cls'.
+[12:05:20.311][Cacher] Updated elements in 167.85 ms: %WS1%/Formelsammlung.tex .
+[12:05:20.311][Event] FILE_PARSED: "%WS1%/Formelsammlung.tex"
+[12:05:20.312][Cacher] Parsing .fls %WS1%/build/Formelsammlung.fls .
+[12:05:20.341][Cacher] Adding %WS1%/img/paralell_session_attack.png .
+[12:05:20.342][Cacher][Watcher] Watched %WS1%/img/paralell_session_attack.png with a new .* watcher on %WS1%/img .
+[12:05:20.342][Event] FILE_WATCHED: "%WS1%/img/paralell_session_attack.png"
+[12:05:20.343][Cacher] Found .aux %WS1%/Formelsammlung.tex from .fls %WS1%/build/Formelsammlung.fls , parsing.
+[12:05:20.343][Cacher] Parsed .aux %WS1%/Formelsammlung.tex .
+[12:05:20.343][Cacher] Parsed .fls %WS1%/build/Formelsammlung.fls .
+[12:05:20.344][Structure] Structure force updated with 0 root sections for %WS1%/Formelsammlung.tex .
+[12:05:20.344][Event] STRUCTURE_UPDATED
+[15:03:46.840][Cacher][Watcher] Reset.
+[15:03:46.840][Cacher][Watcher] Reset.

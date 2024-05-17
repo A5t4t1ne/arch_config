@@ -1,0 +1,9 @@
+Using dotnet configured on PATH
+Dotnet path: /usr/share/dotnet/dotnet
+Activating C# + C# Dev Kit + C# IntelliCode...
+waiting for named pipe information from server...
+[stdout] {"pipeName":"/tmp/4fce47ef.sock"}
+received named pipe information from server
+attempting to connect client to server...
+client has connected to server
+[Info  - 3:03:53 PM] [Program] Language server initialized

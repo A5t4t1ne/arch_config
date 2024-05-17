@@ -1,0 +1,34 @@
+services:
+  nginx:
+    container_name: nginx
+    build: ./nginx/
+    ports:
+      - 80:80
+    volumes:
+        - ./web-server/src/:/var/www/html/
+
+  php:
+    container_name: php
+    build: ./web-server/
+    expose:
+      - 9000
+    volumes:
+      - ./web-server/src/:/var/www/html/
+      - ./some_random_groot_stuff:/var/www/html/some_random_groot_stuff
+
+  ssh:
+    container_name: ssh-user-space
+    build: ./ssh/
+    ports:
+      - 22:22
+    volumes:
+      - /var/run/docker.sock:/tmp/mimimi/docker.sock
+
+  ftp:
+    build: ./ftp/
+    ports:
+      - "20:20"
+      - "21:21"
+    volumes:
+      - ./ftp/pub:/var/ftp/pub
+

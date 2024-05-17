@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.0.0)
+project(pw_manager VERSION 0.1.0)
+
+# libsodium
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(LIBSODIUM REQUIRED libsodium)
+include_directories(${LIBSODIUM_INCLUDE_DIRS})
+
+add_executable(pw_manager main.c crypto.c files.c password.c)
+target_include_directories(pw_manager PUBLIC include)
+
+# use static openssl library
+set(OPENSSL_USE_STATIC_LIBS TRUE)
+find_package(OpenSSL REQUIRED)
+if(OPENSSL_FOUND)
+message("OPENSSL FOUND!")
+endif()
+target_link_libraries(pw_manager libssl.a ${LIBSODIUM_DIR}/lib/libsodium.a ${CMAKE_DL_LIBS})
+
+message(STATUS "OpenSSL include dir: ${OPENSSL_INCLUDE_DIR}")
+message(STATUS "OpenSSL found: ${OPENSSL_FOUND}")
+message(STATUS "OpenSSL libraries: ${OPENSSL_LIBRARIES}")

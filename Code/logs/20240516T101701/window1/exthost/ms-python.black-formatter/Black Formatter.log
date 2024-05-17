@@ -1,0 +1,89 @@
+2024-05-16 10:17:15.529 [info] Name: Black Formatter
+2024-05-16 10:17:15.529 [info] Module: black
+2024-05-16 10:17:15.529 [info] Default formatter is set to ms-python.black-formatter for workspace /home/dave/hslu/SEM4/SecProj/docker_stuff
+2024-05-16 10:17:15.529 [info] Python extension loading
+2024-05-16 10:17:15.529 [info] Waiting for interpreter from python extension.
+2024-05-16 10:17:15.529 [info] No interpreter found from setting black-formatter.interpreter
+2024-05-16 10:17:15.529 [info] Getting interpreter from ms-python.python extension for workspace /home/dave/hslu/SEM4/SecProj/docker_stuff
+2024-05-16 10:17:15.529 [info] Python extension loaded
+2024-05-16 10:17:15.529 [info] Interpreter from ms-python.python extension for /home/dave/hslu/SEM4/SecProj/docker_stuff: /bin/python
+2024-05-16 10:17:15.529 [info] Workspace settings for /home/dave/hslu/SEM4/SecProj/docker_stuff (client side): {
+    "cwd": "/home/dave/hslu/SEM4/SecProj/docker_stuff",
+    "workspace": "file:///home/dave/hslu/SEM4/SecProj/docker_stuff",
+    "args": [],
+    "path": [],
+    "interpreter": [
+        "/bin/python"
+    ],
+    "importStrategy": "useBundled",
+    "showNotifications": "off"
+}
+2024-05-16 10:17:15.529 [info] No interpreter found from setting black-formatter.interpreter
+2024-05-16 10:17:15.529 [info] Getting interpreter from ms-python.python extension for workspace /home/dave/hslu/SEM4/SecProj/docker_stuff
+2024-05-16 10:17:15.529 [info] Interpreter from ms-python.python extension for /home/dave/hslu/SEM4/SecProj/docker_stuff: /bin/python
+2024-05-16 10:17:15.529 [info] Workspace settings for /home/dave/hslu/SEM4/SecProj/docker_stuff (client side): {
+    "cwd": "/home/dave/hslu/SEM4/SecProj/docker_stuff",
+    "workspace": "file:///home/dave/hslu/SEM4/SecProj/docker_stuff",
+    "args": [],
+    "path": [],
+    "interpreter": [
+        "/bin/python"
+    ],
+    "importStrategy": "useBundled",
+    "showNotifications": "off"
+}
+2024-05-16 10:17:15.529 [info] Global settings (client side): {
+    "cwd": "/home/dave",
+    "workspace": "/home/dave",
+    "args": [],
+    "path": [],
+    "interpreter": [],
+    "importStrategy": "useBundled",
+    "showNotifications": "off"
+}
+2024-05-16 10:17:15.529 [info] Server run command: /bin/python /home/dave/.vscode/extensions/ms-python.black-formatter-2024.2.0/bundled/tool/lsp_server.py
+2024-05-16 10:17:15.529 [info] Server: Start requested.
+2024-05-16 10:17:15.914 [info] CWD Server: /home/dave/hslu/SEM4/SecProj/docker_stuff
+2024-05-16 10:17:15.914 [info] Settings received on server:
+[
+    {
+        "cwd": "/home/dave/hslu/SEM4/SecProj/docker_stuff",
+        "workspace": "file:///home/dave/hslu/SEM4/SecProj/docker_stuff",
+        "args": [],
+        "path": [],
+        "interpreter": [
+            "/bin/python"
+        ],
+        "importStrategy": "useBundled",
+        "showNotifications": "off"
+    }
+]
+
+2024-05-16 10:17:15.914 [info] Global settings received on server:
+{
+    "cwd": "/home/dave",
+    "workspace": "/home/dave",
+    "args": [],
+    "path": [],
+    "interpreter": [],
+    "importStrategy": "useBundled",
+    "showNotifications": "off"
+}
+
+2024-05-16 10:17:15.914 [info] sys.path used to run Server:
+   /home/dave/.vscode/extensions/ms-python.black-formatter-2024.2.0/bundled/libs
+   /home/dave/.vscode/extensions/ms-python.black-formatter-2024.2.0/bundled/tool
+   /usr/lib/python312.zip
+   /usr/lib/python3.12
+   /usr/lib/python3.12/lib-dynload
+   /home/dave/.local/lib/python3.12/site-packages
+   /usr/lib/python3.12/site-packages
+2024-05-16 10:17:15.915 [info] /bin/python -m black --version
+2024-05-16 10:17:15.915 [info] CWD formatter: /home/dave/hslu/SEM4/SecProj/docker_stuff
+2024-05-16 10:17:15.991 [info] Version info for formatter running for /home/dave/hslu/SEM4/SecProj/docker_stuff:
+black, 24.3.0 (compiled: no)
+Python (CPython) 3.12.3
+
+2024-05-16 10:17:15.991 [info] SUPPORTED black>=22.3.0
+FOUND black==24.3.0
+

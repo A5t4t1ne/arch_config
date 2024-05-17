@@ -1,0 +1,10 @@
+2024-05-14 12:02:57.693 [info] Using settings sync service https://vscode-sync.trafficmanager.net/
+2024-05-14 12:02:57.693 [info] Auto Sync is enabled.
+2024-05-14 12:02:57.693 [info] Auto Sync: Suspended until auth token is available.
+2024-05-14 12:02:58.306 [info] Deleting non existing profile from backup /home/dave/.config/Code/User/sync/extensions
+2024-05-14 12:02:58.691 [info] Deleting non existing profile from backup /home/dave/.config/Code/User/sync/globalState
+2024-05-14 12:02:58.901 [info] Deleting non existing profile from backup /home/dave/.config/Code/User/sync/keybindings
+2024-05-14 12:02:58.969 [info] Deleting non existing profile from backup /home/dave/.config/Code/User/sync/profiles
+2024-05-14 12:02:59.016 [info] Deleting non existing profile from backup /home/dave/.config/Code/User/sync/settings
+2024-05-14 12:02:59.017 [info] Deleting non existing profile from backup /home/dave/.config/Code/User/sync/snippets
+2024-05-14 12:02:59.017 [info] Deleting non existing profile from backup /home/dave/.config/Code/User/sync/tasks

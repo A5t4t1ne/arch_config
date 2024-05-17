@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gruppe 8</title>
+    <style>
+        .center {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .button {
+            display: inline-flex;
+            font-weight: 400;
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            background-color: #007bff;
+            border: 1px solid #007bff;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            margin-top: 10px;
+        }
+
+        .button:hover {
+            color: #fff;
+            background-color: #0056b3;
+            border-color: #004791;
+        }
+
+        .button:focus {
+            color: #fff;
+            background-color: #0056b3;
+            border-color: #004791;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .5);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body class="center">
+    <div>
+
+    </div>
+    <h1>Welcome to our logging website</h1>
+    <p>You can visit the content of our log file with the button below. If you want to download the file, either visit
+        the log file and press Ctrl+s or press the "Download" button below.
+    </p>
+    <div class="" button-container">
+        <a class="button" , href="/log.txt">Log file</a>
+        <a class="button" , href="/download">Download log</a>
+    </div>
+</body>
+
+</html>

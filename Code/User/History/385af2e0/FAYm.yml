@@ -1,0 +1,23 @@
+services:
+  nginx:
+    container_name: nginx
+    build: ./nginx/
+    ports:
+      - 80:80
+    volumes:
+        - ./web-server/src/:/var/www/html/
+
+  php:
+    container_name: php
+    build: ./web-server/
+    expose:
+      - 9000
+    volumes:
+      - ./web-server/src/:/var/www/html/
+
+  ssh:
+    container_name: ssh-user-space
+    build: ./ssh/
+    ports:
+      - 2222:22
+

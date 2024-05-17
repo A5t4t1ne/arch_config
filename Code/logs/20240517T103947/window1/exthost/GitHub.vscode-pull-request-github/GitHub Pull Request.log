@@ -1,0 +1,5 @@
+2024-05-17 10:39:51.450 [info] Activation> Extension version: 0.86.1
+2024-05-17 10:39:52.185 [info] Looking for git repository
+2024-05-17 10:39:52.185 [info] Found 0 repositories during activation
+2024-05-17 10:39:52.185 [info] Git repository found, initializing review manager and pr tree view.
+2024-05-17 10:39:52.185 [info] Registering git provider

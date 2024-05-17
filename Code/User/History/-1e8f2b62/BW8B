@@ -1,0 +1,32 @@
+FROM php:7.0-fpm
+
+RUN apt update && apt upgrade
+RUN apt install python3
+
+
+
+# RUN docker-php-ext-install mysqli pdo pdo_mysql
+# RUN docker-php-ext-enable mysqli
+
+
+# FROM nginx:alpine
+
+# RUN awk update && awk upgrade
+
+# Network
+# EXPOSE 80
+# EXPOSE 22
+# COPY ./nginx.conf /etc/nginx/nginx.conf
+
+# Add SSH - TODO: configure
+# RUN apk add openssh
+
+# Add packages
+# RUN apk add bash python3 php php-fpm
+
+# Static files
+# COPY ./src /usr/share/nginx/html
+
+
+# Start (default command from base image)
+# CMD ["nginx", "-g", "daemon off;"]

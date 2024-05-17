@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /admin
+Disallow: /login
+Disallow: /private
+Crawl-delay: 5
+Sitemap: https://www.example.com/sitemap.xml
+Allow: /public
+Disallow: /private
+
+// Disallow /login:guest
+

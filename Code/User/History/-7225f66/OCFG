@@ -1,0 +1,30 @@
+FROM centos:latest
+
+# RUN yum -y update && yum -y install vsftpd net-tools
+
+# # RUN mkdir -p /home/ftpusers
+# # COPY ./pub/protocol.txt /home/ftpusers/protocol.txt
+# COPY vsftpd.conf /etc/vsftpd/vsftpd.conf
+# RUN chown root:root /etc/vsftpd/vsftpd.conf
+# RUN ls -la /
+
+# EXPOSE 20 21
+
+# CMD ["/usr/sbin/vsftpd", "-d", "/etc/vsftpd/vsftpd.conf"]
+
+
+# Configure vsftpd for anonymous, read-only access
+RUN echo "anonymous_enable=YES" >> /etc/vsftpd.conf
+RUN echo "write_enable=NO" >> /etc/vsftpd.conf
+RUN echo "anon_upload_enable=NO" >> /etc/vsftpd.conf
+RUN echo "anon_mkdir_write_enable=NO" >> /etc/vsftpd.conf
+RUN echo "anon_root=/var/ftp" >> /etc/vsftpd.conf
+RUN echo "chroot_local_user=YES" >> /etc/vsftpd.conf
+
+# Expose FTP ports
+EXPOSE 21
+EXPOSE 32022-32041
+
+# Start vsftpd
+CMD ["/usr/sbin/vsftpd"]
+

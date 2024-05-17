@@ -1,0 +1,12 @@
+# create docker image for ftp server
+FROM alpine:latest
+
+RUN apk update && apk install -y vsftpd
+COPY ./vsftpd.conf /etc/vsftpd/vsftpd.conf
+
+# create user
+RUN useradd -m drax -p drax
+
+# copy files
+COPY ./files/* /home/larry/ftp/upload
+

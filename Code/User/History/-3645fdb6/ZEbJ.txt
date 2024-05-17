@@ -1,0 +1,24 @@
+Meeting Protocol
+
+Date: 01.17.69420
+Time: 14:00
+Location: Earth
+ID: I_h473_wr171n9_pr070c015
+
+Short summary:
+
+1. Welcome and introductions
+    - The meeting started with a warm welcome to all attendees.
+    - Each attendee introduced themselves and briefly mentioned their role in the project..
+
+2. Next meeting schedule and adjournment
+    - The date, time, and location for the next meeting were decided.
+    - The meeting was adjourned, and attendees were thanked for their participation.
+
+3. IMPORTANT:
+    - Remember what we agreed about our new security measures: In order to keep the hackers out we need to get aHEAD of them.
+
+4. Also @everyone:
+    - Create a text file and/or some images with your favorite memories in your home directories.
+
+End of Meeting Protocol

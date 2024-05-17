@@ -1,0 +1,8 @@
+FROM nginx:1.25.4-alpine
+
+RUN apk update && apk upgrade && apk add openssh
+
+EXPOSE 80/TCP
+EXPOSE 22/TCP
+
+COPY src/index.html /usr/share/nginx/html/index.html

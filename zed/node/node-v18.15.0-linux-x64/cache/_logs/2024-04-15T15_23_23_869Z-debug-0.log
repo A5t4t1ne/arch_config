@@ -1,0 +1,77 @@
+0 verbose cli /home/dave/.config/zed/node/node-v18.15.0-linux-x64/bin/node /home/dave/.config/zed/node/node-v18.15.0-linux-x64/bin/npm
+1 info using npm@9.5.0
+2 info using node@v18.15.0
+3 timing npm:load:whichnode Completed in 1ms
+4 timing config:load:defaults Completed in 1ms
+5 timing config:load:file:/home/dave/.config/zed/node/node-v18.15.0-linux-x64/lib/node_modules/npm/npmrc Completed in 0ms
+6 timing config:load:builtin Completed in 0ms
+7 timing config:load:cli Completed in 2ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:/home/dave/.config/zed/prettier/.npmrc Completed in 0ms
+10 timing config:load:project Completed in 0ms
+11 timing config:load:file:/home/dave/.config/zed/node/node-v18.15.0-linux-x64/blank_user_npmrc Completed in 0ms
+12 timing config:load:user Completed in 1ms
+13 timing config:load:file:/home/dave/.config/zed/node/node-v18.15.0-linux-x64/blank_global_npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:setEnvs Completed in 0ms
+16 timing config:load Completed in 5ms
+17 timing npm:load:configload Completed in 5ms
+18 timing npm:load:mkdirpcache Completed in 0ms
+19 timing npm:load:mkdirplogs Completed in 0ms
+20 verbose title npm install prettier@3.2.5
+21 verbose argv "install" "--cache" "/home/dave/.config/zed/node/node-v18.15.0-linux-x64/cache" "--userconfig" "/home/dave/.config/zed/node/node-v18.15.0-linux-x64/blank_user_npmrc" "--globalconfig" "/home/dave/.config/zed/node/node-v18.15.0-linux-x64/blank_global_npmrc" "prettier@3.2.5" "--save-exact" "--fetch-retry-mintimeout" "2000" "--fetch-retry-maxtimeout" "5000" "--fetch-timeout" "5000" "--prefix" "/home/dave/.config/zed/prettier"
+22 timing npm:load:setTitle Completed in 1ms
+23 timing config:load:flatten Completed in 2ms
+24 timing npm:load:display Completed in 2ms
+25 verbose logfile logs-max:10 dir:/home/dave/.config/zed/node/node-v18.15.0-linux-x64/cache/_logs/2024-04-15T15_23_23_869Z-
+26 verbose logfile /home/dave/.config/zed/node/node-v18.15.0-linux-x64/cache/_logs/2024-04-15T15_23_23_869Z-debug-0.log
+27 timing npm:load:logFile Completed in 3ms
+28 timing npm:load:timers Completed in 0ms
+29 timing npm:load:configScope Completed in 0ms
+30 timing npm:load Completed in 13ms
+31 timing config:load:flatten Completed in 1ms
+32 timing arborist:ctor Completed in 1ms
+33 silly logfile done cleaning log files
+34 timing arborist:ctor Completed in 0ms
+35 timing idealTree:init Completed in 5ms
+36 timing idealTree:userRequests Completed in 1ms
+37 silly idealTree buildDeps
+38 silly fetch manifest prettier@3.2.5
+39 http fetch GET 200 https://registry.npmjs.org/npm 255ms (cache miss)
+40 http fetch GET 200 https://registry.npmjs.org/prettier 1204ms (cache miss)
+41 silly placeDep ROOT prettier@3.2.5 OK for:  want: 3.2.5
+42 timing idealTree:#root Completed in 1210ms
+43 timing idealTree:node_modules/prettier Completed in 0ms
+44 timing idealTree:buildDeps Completed in 1211ms
+45 timing idealTree:fixDepFlags Completed in 0ms
+46 timing idealTree Completed in 1219ms
+47 timing reify:loadTrees Completed in 1219ms
+48 timing reify:diffTrees Completed in 1ms
+49 silly reify moves {}
+50 timing reify:retireShallow Completed in 1ms
+51 timing reify:createSparse Completed in 0ms
+52 timing reify:loadBundles Completed in 0ms
+53 silly tarball no local data for prettier@https://registry.npmjs.org/prettier/-/prettier-3.2.5.tgz. Extracting by manifest.
+54 http fetch GET 200 https://registry.npmjs.org/prettier/-/prettier-3.2.5.tgz 201ms (cache miss)
+55 timing reifyNode:node_modules/prettier Completed in 205ms
+56 timing reify:unpack Completed in 205ms
+57 timing reify:unretire Completed in 0ms
+58 timing build:queue Completed in 0ms
+59 timing build:link:node_modules/prettier Completed in 1ms
+60 timing build:link Completed in 1ms
+61 timing build:deps Completed in 1ms
+62 timing build Completed in 1ms
+63 timing reify:build Completed in 1ms
+64 timing reify:trash Completed in 0ms
+65 timing reify:save Completed in 3ms
+66 timing reify Completed in 1463ms
+67 silly ADD node_modules/prettier
+68 timing command:install Completed in 1466ms
+69 notice
+69 notice New major version of npm available! 9.5.0 -> 10.5.2
+69 notice Changelog: <https://github.com/npm/cli/releases/tag/v10.5.2>
+69 notice Run `npm install -g npm@10.5.2` to update!
+69 notice
+70 verbose exit 0
+71 timing npm Completed in 1486ms
+72 info ok

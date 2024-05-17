@@ -1,0 +1,4 @@
+PHP extension started.
+Couldn't resolve requested PHP version '8.2' ... Using default 'php'.
+Notice: 'php' cannot be found. Specify setting "php.executables" or "php.executablePath".
+PHP Language Server Started.

@@ -1,0 +1,10 @@
+CC=gcc
+CFLAGS=-I.
+
+TARGET = main
+
+main.o: main.c
+	$(CC) $(CFLAGS) -c main.c
+
+all: main
+
