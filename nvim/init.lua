@@ -37,3 +37,6 @@ vim.api.nvim_set_hl(0, "ErrorMsg", { bg = "LightBlue" })
 vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = "LightBlue" })
 vim.api.nvim_set_hl(0, "LspReferenceText", { bg = "LightBlue" })
 vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "LightBlue" })
+
+
+vim.keymap.set("n", "<C-u>", "<C-u>zz")

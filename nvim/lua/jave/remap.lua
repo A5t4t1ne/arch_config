@@ -1,5 +1,8 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>ps", function()
+	require("telescope.builtin").live_grep()
+end, { desc = "teelscope Live Grep" })
 
 -- movement --
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -17,7 +20,8 @@ vim.keymap.set({ 'n' }, "<C-w>ö", "<C-w>l", {noremap = true})
 
 -- editing --
 vim.keymap.set("v", "<leader>p", "\"_dP")
+vim.keymap.set("v", "<leader>p", "\"_dP")
 
 
--- undotree --
+-- plugins-specific --
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)

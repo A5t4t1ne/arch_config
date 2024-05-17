@@ -12,13 +12,25 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	plugins = {
+		formatter = {
+			exe = "prettier",
+			args = {},
+			stdin = true,
+		}
+	},
+
 	-- theme --
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-	"folke/which-key.nvim",
-	
+	{ "folke/tokyonight.nvim",
+		name = "Tokyo Night",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
+
 	-- telescope --
 	{'nvim-telescope/telescope.nvim', tag = '0.1.6',
-	dependencies = { 
+	dependencies = {
 		'nvim-lua/plenary.nvim',
 	},
 	keys = {
@@ -94,10 +106,33 @@ require("lazy").setup({
 	-- lsp --
 	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
 	{'neovim/nvim-lspconfig'},
-	{'hrsh7th/cmp-nvim-lsp'},
 	{'hrsh7th/nvim-cmp'},
-	{'L3MON4D3/LuaSnip'},
-
-	-- lsp-servers --
 	{ 'mfussenegger/nvim-jdtls' },
+	{ "neovim/nvim-lspconfig", },
+	{ "VonHeikemen/lsp-zero.nvim", },
+	-- { "hrsh7th/nvim-cmp", }, -- Autocompletion plugin
+	-- { "hrsh7th/cmp-nvim-lsp", }, -- LSP source for nvim-cmp
+	-- {
+	-- 	"zbirenbaum/copilot-cmp", -- Copilot source for nvim-cmp
+	-- 	config = function()
+	-- 		require("copilot_cmp").setup()
+	-- 	end,
+	-- },
+	{
+		"zbirenbaum/copilot.lua", -- Copilot plugin
+		config = function()
+			require("copilot").setup()
+		end,
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+			config = function()
+				require("luasnip.loaders.from_vscode").lazy_load()
+			end,
+		},
+	},
+	{ "williamboman/mason.nvim", },
+	{ "williamboman/mason-lspconfig.nvim", },
 })
