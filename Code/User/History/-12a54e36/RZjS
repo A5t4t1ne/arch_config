@@ -1,8 +1,0 @@
-CC=gcc
-CFLAGS=-O2 -Wall
-
-SOURCES=test.c \
-		vector.c	
-
-
-OBJECTS=$(SOURCES:.c=.o)

@@ -12,6 +12,8 @@ vim.keymap.set({ 'n', 'v' }, "j", "<Left>", {noremap = true}) -- { 'n', 'v', 'x'
 vim.keymap.set({ 'n', 'v' }, "k", "<Down>", {noremap = true})
 vim.keymap.set({ 'n', 'v' }, "l", "<Up>", {noremap = true})
 vim.keymap.set({ 'n', 'v' }, "ö", "<Right>", {noremap = true})
+vim.keymap.set({ 'n', 'v' }, "J", "H", {noremap = true})
+vim.keymap.set({ 'n', 'v' }, "é", "L", {noremap = true})
 
 vim.keymap.set({ 'n' }, "<C-w>j", "<C-w>h", {noremap = true})
 vim.keymap.set({ 'n' }, "<C-w>k", "<C-w>j", {noremap = true})

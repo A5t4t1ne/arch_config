@@ -2,7 +2,6 @@ local lsp_zero = require('lsp-zero')
 
 lsp_zero.preset('recommended')
 
-
 lsp_zero.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
@@ -29,33 +28,16 @@ cmp.setup({
   },
 })
 
+-- An example nvim-lspconfig capabilities setting
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- require('lspconfig').rust_analyzer.setup({})
--- require('lspconfig').clangd.setup({})
--- require('lspconfig').anakin_language_server.setup({})
--- require('lspconfig').java_language_server.setup({})
--- require('lspconfig').biome.setup({})
--- require('lspconfig').texlab.setup({
--- 	settings = {
--- 		texlab = {
--- 			auxDirectory = ".",
--- 			bibtexFormatter = "texlab",
--- 			chktexOpts = {
--- 				lint = {
--- 					enabledWarnings = { "code", "math" },
--- 				},
--- 			},
--- 			formatterLineLength = 80,
--- 		},
--- 	},
--- })
--- require('lspconfig').ltex.setup({
--- 	settings = {
--- 		ltex = {
--- 			lang = "de-CH",
--- 		}
--- 	}
--- })
+-- Ensure that dynamicRegistration is enabled! This allows the LS to take into account actions like the
+-- Create Unresolved File code action, resolving completions for unindexed code blocks, ...
+capabilities.workspace = {
+    didChangeWatchedFiles = {
+      dynamicRegistration = true,
+    },
+}
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
@@ -66,7 +48,6 @@ require('mason-lspconfig').setup({
 		'java_language_server',
 		'biome',
 		'texlab',
-		'marksman',
 	},
 
 	handlers = {
@@ -91,5 +72,5 @@ require('mason-lspconfig').setup({
 				},
 			})
 		end,
-  },
+	}
 })

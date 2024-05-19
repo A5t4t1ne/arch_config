@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "*.embeddedhtml": "html",
-        "random": "c"
-    },
-    "cmake.configureOnOpen": false
-}

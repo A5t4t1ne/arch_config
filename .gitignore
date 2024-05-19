@@ -1,12 +1,10 @@
 /*
-!Code/*
 !fish/*
 !.gitignore
 !hypr/*
 !kitty/*
 !neofetch/*
 !nvim/*
-!obsidian/*
 !rofi/*
 !starship.toml
 !swaylock/*
@@ -17,13 +15,11 @@
 !wlogout/*
 !zed/*
 
-!Code/
 !fish/
 !hypr/
 !kitty/
 !neofetch/
 !nvim/
-!obsidian/
 !rofi/
 !swaylock/
 !swww/

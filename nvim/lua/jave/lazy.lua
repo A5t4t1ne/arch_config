@@ -39,7 +39,16 @@ require("lazy").setup({
 	}},
 
 	-- treesitter --
-	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	{ 
+		"nvim-treesitter/nvim-treesitter", 
+		build = ":TSUpdate",
+		opts = {
+			ensure_installed = {
+				"markdown", 
+				"markdown_inline",
+			},
+		},
+	},
 
 	-- fonts and icons --
 	{'nvim-tree/nvim-web-devicons', name = "devicons" },
@@ -104,22 +113,20 @@ require("lazy").setup({
 	},
 
 	-- lsp --
-	{'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-	{'neovim/nvim-lspconfig'},
-	{'hrsh7th/nvim-cmp'},
+	{ 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
+	{ 'neovim/nvim-lspconfig'},
+	{ 'hrsh7th/nvim-cmp'},
 	{ 'mfussenegger/nvim-jdtls' },
-	{ "neovim/nvim-lspconfig", },
-	{ "VonHeikemen/lsp-zero.nvim", },
-	-- { "hrsh7th/nvim-cmp", }, -- Autocompletion plugin
-	-- { "hrsh7th/cmp-nvim-lsp", }, -- LSP source for nvim-cmp
-	-- {
-	-- 	"zbirenbaum/copilot-cmp", -- Copilot source for nvim-cmp
-	-- 	config = function()
-	-- 		require("copilot_cmp").setup()
-	-- 	end,
-	-- },
+	{ 'neovim/nvim-lspconfig', },
+	{ 
+		'VonHeikemen/lsp-zero.nvim',
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"williamboman/mason-lspconfig.nvim",
+		}
+	},
 	{
-		"zbirenbaum/copilot.lua", -- Copilot plugin
+		"zbirenbaum/copilot.lua",
 		config = function()
 			require("copilot").setup()
 		end,
@@ -135,4 +142,14 @@ require("lazy").setup({
 	},
 	{ "williamboman/mason.nvim", },
 	{ "williamboman/mason-lspconfig.nvim", },
+	{ "hrsh7th/cmp-nvim-lsp", },
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function() vim.fn["mkdp#util#install"]() end,
+		keys = {
+			{ "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", },
+		},
+	 },
 })

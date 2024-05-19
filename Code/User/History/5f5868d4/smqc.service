@@ -1,6 +1,0 @@
-[Unit]
-Description=Startup the system for CTF
-
-[Service]
-Type=simple
-ExecStart=/root/startup.sh
