@@ -127,9 +127,10 @@ require("lazy").setup({
 	},
 	{
 		"zbirenbaum/copilot.lua",
-		config = function()
-			require("copilot").setup()
-		end,
+		opts = {
+			suggestion = { enabled = true },
+			panael = { enabled = true },
+		},
 	},
 	{
 		"L3MON4D3/LuaSnip",
@@ -152,4 +153,40 @@ require("lazy").setup({
 			{ "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", },
 		},
 	 },
+	{
+	    "preservim/vim-markdown",
+	    ft = "markdown",
+	    dependencies = {
+	   	 'godlygeek/tabular',
+	   	 'elzr/vim-json',
+	   	 'plasticboy/vim-markdown',
+	    },
+	    config = function()
+	   	 vim.g.vim_markdown_folding_disabled = 1
+	   	 vim.g.vim_markdown_conceal = 0
+	   	 -- vim.g.tex_conceal = ""
+	   	 -- vim.g.vim_markdown_math = 1
+
+	   	 vim.g.vim_markdown_frontmatter = 1
+	   	 vim.g.vim_markdown_toml_frontmatter = 1
+	   	 vim.g.vim_markdown_json_frontmatter = 1
+	    end,
+	},
+	{
+	    'vim-pandoc/vim-pandoc-syntax',
+	    ft = { "markdown", "pandoc" },
+	    config = function()
+	   	 vim.g.vim_markdown_conceal = 0
+	    end,
+	    init = function()
+	   	 vim.api.nvim_create_augroup("pandoc_syntax", { clear = true })
+	   	 vim.api.nvim_create_autocmd({ "BufNewFile", "BufFilePre", "BufRead" }, {
+	   		 pattern = "*.md",
+	   		 group = "pandoc_syntax",
+	   		 callback = function()
+	   			 vim.bo.filetype = "markdown.pandoc"
+	   		 end,
+	   	 })
+	    end,
+	},
 })

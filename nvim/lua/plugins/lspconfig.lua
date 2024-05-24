@@ -24,7 +24,6 @@ cmp.setup({
   mapping = cmp_mappings,
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'copilot' },
   },
 })
 
@@ -42,12 +41,13 @@ capabilities.workspace = {
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
-		'tsserver',
-		'rust_analyzer',
-		'clangd',
-		'java_language_server',
-		'biome',
-		'texlab',
+		-- 'tsserver',
+		-- 'rust_analyzer',
+		-- 'clangd',
+		-- 'java_language_server',
+		-- 'biome',
+		-- 'texlab',
+		'marksman',
 	},
 
 	handlers = {

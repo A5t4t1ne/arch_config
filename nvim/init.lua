@@ -12,6 +12,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.autoindent = true
+-- vim.opt.conceallevel = 0
 
 vim.api.nvim_set_hl(0, 'FloatBorder', {bg='#3B4252', fg='#5E81AC'})
 vim.api.nvim_set_hl(0, 'NormalFloat', {bg='#3B4252'})
@@ -38,5 +39,3 @@ vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = "LightBlue" })
 vim.api.nvim_set_hl(0, "LspReferenceText", { bg = "LightBlue" })
 vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "LightBlue" })
 
-
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
