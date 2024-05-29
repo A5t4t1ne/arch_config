@@ -76,7 +76,9 @@ require("lazy").setup({
 	-- ZenMode --
 	{ 
 		"folke/zen-mode.nvim", 
-		opts = {},
+		keys = {
+			{ "<leader>z", "<cmd>ZenMode<cr>", },
+		},
 	},
 
 	-- VimBeGood --
