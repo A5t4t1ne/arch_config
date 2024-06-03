@@ -21,7 +21,8 @@ require("lazy").setup({
 	},
 
 	-- theme --
-	{ "folke/tokyonight.nvim",
+	{ 
+		"folke/tokyonight.nvim",
 		name = "Tokyo Night",
 		lazy = false,
 		priority = 1000,
@@ -86,26 +87,7 @@ require("lazy").setup({
 
 	-- UndoTree --
 	{ "mbbill/undotree", },
-
-	-- Vim-Tmux-Navigator
--- 	{
--- 		"christoomey/vim-tmux-navigator",
--- 		cmd = {
--- 			"TmuxNavigateLeft",
--- 			"TmuxNavigateDown",
--- 			"TmuxNavigateUp",
--- 			"TmuxNavigateRight",
--- 			"TmuxNavigatePrevious",
--- 		},
--- 		keys = {
--- 			{ "<c-j>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
--- 			{ "<c-k>", "<cmd><C-U>TmuxNavigateDown<cr>" },
--- 			{ "<c-l>", "<cmd><C-U>TmuxNavigateUp<cr>" },
--- 			{ "<c-ö>", "<cmd><C-U>TmuxNavigateRight<cr>" },
--- 			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
--- 		},
--- 	},
-
+	
 	-- vim-fugitive --
 	{
 		"tpope/vim-fugitive",
@@ -126,13 +108,6 @@ require("lazy").setup({
 			"neovim/nvim-lspconfig",
 			"williamboman/mason-lspconfig.nvim",
 		}
-	},
-	{
-		"zbirenbaum/copilot.lua",
-		opts = {
-			suggestion = { enabled = true },
-			panael = { enabled = true },
-		},
 	},
 	{
 		"L3MON4D3/LuaSnip",
@@ -191,4 +166,14 @@ require("lazy").setup({
 	   	 })
 	    end,
 	},
+	{
+		"onsails/lspkind.nvim",
+	},
+	{
+		"AckslD/swenv.nvim",
+	},
+	{
+		"ahmedkhalf/project.nvim",
+	},
+
 })

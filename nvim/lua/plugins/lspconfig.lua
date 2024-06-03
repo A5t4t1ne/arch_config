@@ -11,6 +11,7 @@ end)
 
 -- Configure autocompletion
 local cmp = require('cmp')
+local lspkind = require('lspkind')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp_zero.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
@@ -24,6 +25,23 @@ cmp.setup({
   mapping = cmp_mappings,
   sources = {
     { name = 'nvim_lsp' },
+  },
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = 'symbol', -- show only symbol annotations
+      maxwidth = function() 
+	      return math.floor(0.45 * vim.o.columns) 
+      end, 
+                     -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
+      ellipsis_char = '...', -- shows when not enough space
+      show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+
+      -- The function below will be called before any actual modifications from lspkind
+      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+      before = function (entry, vim_item)
+        return vim_item
+      end
+    })
   },
 })
 
@@ -41,12 +59,12 @@ capabilities.workspace = {
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
-		-- 'tsserver',
-		-- 'rust_analyzer',
-		-- 'clangd',
-		-- 'java_language_server',
-		-- 'biome',
-		-- 'texlab',
+		'tsserver',
+		'rust_analyzer',
+		'clangd',
+		'java_language_server',
+		'biome',
+		'texlab',
 		'marksman',
 	},
 

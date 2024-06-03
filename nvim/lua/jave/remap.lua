@@ -1,8 +1,16 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = ' '
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>')
+
+-- project navigation --
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>ps", function()
 	require("telescope.builtin").live_grep()
-end, { desc = "teelscope Live Grep" })
+end, { desc = "telscope Live Grep" })
+
+vim.keymap.set("n", "<leader>pe", function()
+	require('swenv.api').pick_venv()
+end, { desc = "switch python venv" })
 
 -- movement --
 vim.keymap.set("n", "<C-d>", "<C-d>zz")

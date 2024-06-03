@@ -4,19 +4,15 @@ italic_font      auto
 bold_italic_font auto
 
 font_size 12.0
-window_padding_width 0 0 3 0 
+# window_padding_width 25
+window_padding_width 0
 include themes/theme.conf
-background_opacity 0.6
-hide_window_decorations yes
-enabled_layouts tall, splits
+#background_opacity 0.60
+#hide_window_decorations yes
+#confirm_os_window_close 0
 
 map ctrl+shift+1 change_font_size all +2.0
 map ctrl+shift+minus change_font_size all -2.0
-
-map ctrl+shift+j neighboring_window left
-map ctrl+shift+ö neighboring_window right  
-map ctrl+shift+l neighboring_window up
-map ctrl+shift+k neighboring_window down
 
 map alt+1 goto_tab 1
 map alt+2 goto_tab 2
@@ -28,11 +24,5 @@ map alt+7 goto_tab 7
 map alt+8 goto_tab 8
 map alt+9 goto_tab 9
 
-# shell /usr/bin/bash
+shell /usr/bin/bash
 shell /usr/bin/fish
-
-
-# BEGIN_KITTY_THEME
-# Tokyo Night Moon
-include current-theme.conf
-# END_KITTY_THEME
