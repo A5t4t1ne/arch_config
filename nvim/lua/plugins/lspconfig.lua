@@ -25,6 +25,7 @@ cmp.setup({
   mapping = cmp_mappings,
   sources = {
     { name = 'nvim_lsp' },
+	{ name = 'ultisnips' },
   },
   formatting = {
     format = lspkind.cmp_format({

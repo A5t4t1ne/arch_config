@@ -39,3 +39,4 @@ vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<C-c><cmd>w<cr>")
 
 -- plugins-specific --
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+

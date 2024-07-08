@@ -175,5 +175,16 @@ require("lazy").setup({
 	{
 		"ahmedkhalf/project.nvim",
 	},
-
+	{
+		"L3MON4D3/LuaSnip",
+		version = "v2.*", 
+		-- install jsregexp (optional!).
+		build = "make install_jsregexp"
+	},
+	{
+		"iamcco/markdown-preview.nvim",
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = { "markdown" },
+		build = function() vim.fn["mkdp#util#install"]() end,
+	},
 })
