@@ -6,7 +6,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>')
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>ps", function()
 	require("telescope.builtin").live_grep()
-end, { desc = "telscope Live Grep" })
+end, { desc = "telescope Live Grep" })
 
 vim.keymap.set("n", "<leader>pe", function()
 	require('swenv.api').pick_venv()
@@ -18,7 +18,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-o>", "<C-o>zz")
 vim.keymap.set("n", "<C-i>", "<C-i>zz")
 vim.keymap.set("n", "n", "nzz")
-vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "j", "<Left>", {noremap = true}) -- { 'n', 'v', 'x', 's', 'o', 'i', 'c', 't' }
+vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "j", "<Left>", {noremap = true}) 
 vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "", {noremap = true})
 vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "<Down>", {noremap = true})
 vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "l", "<Up>", {noremap = true})
@@ -33,8 +33,8 @@ vim.keymap.set({ 'n' }, "<C-w>l", "<C-w>k", {noremap = true})
 vim.keymap.set({ 'n' }, "<C-w>ö", "<C-w>l", {noremap = true})
 
 -- editing --
-vim.keymap.set("v", "<leader>p", "\"_dP")
-vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<C-c><cmd>w<cr>")
+vim.keymap.set("v", "<leader>p", "\"_dP") -- paste without overwriting clipboard
+vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<C-c><cmd>w<cr>") -- save
 
 
 -- plugins-specific --
