@@ -1,0 +1,4 @@
+Some keybinds
+
+LSP:
+"grn" is mapped in Normal mode to vim.lsp.buf.rename()

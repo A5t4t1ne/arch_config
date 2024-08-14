@@ -23,7 +23,8 @@ vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "", {noremap = true})
 vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "<Down>", {noremap = true})
 vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "l", "<Up>", {noremap = true})
 vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "ö", "<Right>", {noremap = true})
-vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "J", "H", {noremap = true})
+vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "K", "<Down>zz", {noremap = true})
+vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "L", "<Up>zz", {noremap = true})
 vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "é", "L", {noremap = true})
 vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "h", "", {noremap = true})
 
@@ -35,17 +36,18 @@ vim.keymap.set({ 'n' }, "<C-w>ö", "<C-w>l", {noremap = true})
 -- editing --
 vim.keymap.set("v", "<leader>p", "\"_dP") -- paste without overwriting clipboard
 vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<C-c><cmd>w<cr>") -- save
-
+vim.keymap.set({ "n" }, "<A-k>", "o<Esc>", {noremap = true})
+vim.keymap.set({ "n" }, "<A-l>", "O<Esc>", {noremap = true})
 
 -- plugins-specific --
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
--- Set key bindings for LSP code actions
-vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
-
--- LSP 
+-- LSP --
 vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'h', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>rr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>', { noremap = true, silent = true })
 
