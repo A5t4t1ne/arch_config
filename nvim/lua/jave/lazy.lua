@@ -119,15 +119,6 @@ require("lazy").setup({
 			"williamboman/mason-lspconfig.nvim",
 		}
 	},
-	{
-		"L3MON4D3/LuaSnip",
-		dependencies = {
-			"rafamadriz/friendly-snippets",
-			config = function()
-				require("luasnip.loaders.from_vscode").lazy_load()
-			end,
-		},
-	},
 	{ "williamboman/mason.nvim", },
 	{ "williamboman/mason-lspconfig.nvim", },
 	{ "hrsh7th/cmp-nvim-lsp", },
@@ -150,7 +141,7 @@ require("lazy").setup({
 		},
 		config = function()
 			vim.g.vim_markdown_folding_disabled = 1
-			vim.g.vim_markdown_conceal = 0
+			vim.g.vim_markdown_conceal = 1
 			-- vim.g.tex_conceal = ""
 			-- vim.g.vim_markdown_math = 1
 
@@ -184,18 +175,6 @@ require("lazy").setup({
 	},
 	{
 		"ahmedkhalf/project.nvim",
-	},
-	{
-		"L3MON4D3/LuaSnip",
-		version = "v2.*",
-		-- install jsregexp (optional!).
-		build = "make install_jsregexp"
-	},
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		ft = { "markdown" },
-		build = function() vim.fn["mkdp#util#install"]() end,
 	},
 	{
 		"mfussenegger/nvim-dap",
@@ -239,11 +218,54 @@ require("lazy").setup({
 		"folke/lazydev.nvim",
 		ft = "lua", -- only load on lua files
 		opts = {
-		library = {
-        -- See the configuration section for more details
-        -- Load luvit types when the `vim.uv` word is found
-        { path = "luvit-meta/library", words = { "vim%.uv" } },
-      },
-    },
-},
+			library = {
+				-- See the configuration section for more details
+				-- Load luvit types when the `vim.uv` word is found
+				{ path = "luvit-meta/library", words = { "vim%.uv" } },
+			},
+		},
+	},
+	{
+		"lervag/vimtex",
+		lazy = false,
+		ft = "tex",
+		config = function()
+			vim.g.vimtex_view_method = 'zathura'
+			vim.g.vimtex_compiler_method = 'latexmk'
+			vim.g.vimtex_compiler_latexmk = {
+				build_dir = 'build',
+				callback = 1,
+				continuous = 1,
+				executable = 'latexmk',
+				options = {
+					'-pdf',
+					'-outdir=build',
+					'-shell-escape',
+					'-verbose',
+					'-file-line-error',
+					'-synctex=1',
+					'-interaction=nonstopmode',
+				},
+			}
+			vim.g.vimtex_view_general_options = '--synctex-forward @line:@col:@tex build/@pdf' -- for zathura to find the pdf in the build folder
+		end
+	},
+	{
+		'SirVer/ultisnips',
+		config = function()
+			vim.g.UltiSnipsExpandTrigger = '<tab>'
+			vim.g.UltiSnipsJumpForwardTrigger = '<tab>'
+			vim.g.UltiSnipsJumpBackwardTrigger = '<S-tab>'
+		end
+
+	},
+	{ "quangnguyen30192/cmp-nvim-ultisnips", },
+	{ "honza/vim-snippets", },
+	{
+		"jhofscheier/ltex-utils.nvim", -- for add to dictionary, ignore false positives etc.
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"nvim-telescope/telescope.nvim",
+		},
+	},
 })
