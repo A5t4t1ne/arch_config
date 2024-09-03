@@ -9,6 +9,7 @@
 !neofetch/*
 !nvim/
 !nvim/*
+nvim/pack/nvim/start/nvim-lspconfig
 !rofi/
 !rofi/*
 !swaylock/
@@ -17,8 +18,8 @@
 !swww/*
 !systemd/
 !systemd/*
-!tmux/
-!tmux/*
+# !tmux/
+# !tmux/*
 !waybar/
 !waybar/*
 !wlogout/
