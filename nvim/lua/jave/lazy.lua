@@ -32,13 +32,13 @@ require("lazy").setup({
 	-- telescope --
 	{
 		'nvim-telescope/telescope.nvim',
-		tag = '0.1.6',
 		dependencies = {
 			'nvim-lua/plenary.nvim',
 		},
 		keys = {
-			-- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-			{ "<C-p>", "<cmd>Telescope git_files<cr>", desc = "Find git files" },
+			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
+			{ "<leader>ps", "<cmd>Telescope live_grep<cr>",  desc = "Live grep" },
+			{ "<C-p>",      "<cmd>Telescope git_files<cr>",  desc = "Find git files" },
 		}
 	},
 
@@ -109,7 +109,16 @@ require("lazy").setup({
 	-- lsp --
 	{ 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
 	{ 'neovim/nvim-lspconfig' },
-	{ 'hrsh7th/nvim-cmp' },
+	{
+		'hrsh7th/nvim-cmp',
+		dependencies = {
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-nvim-lsp',
+			'saadparwaiz1/cmp_luasnip',
+			'L3MON4D3/LuaSnip',
+		},
+	},
 	{ 'mfussenegger/nvim-jdtls' },
 	{ 'neovim/nvim-lspconfig', },
 	{
@@ -121,7 +130,6 @@ require("lazy").setup({
 	},
 	{ "williamboman/mason.nvim", },
 	{ "williamboman/mason-lspconfig.nvim", },
-	{ "hrsh7th/cmp-nvim-lsp", },
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -247,25 +255,48 @@ require("lazy").setup({
 					'-interaction=nonstopmode',
 				},
 			}
-			vim.g.vimtex_view_general_options = '--synctex-forward @line:@col:@tex build/@pdf' -- for zathura to find the pdf in the build folder
+			vim.g.vimtex_view_general_options =
+			'--synctex-forward @line:@col:@tex build/@pdf' -- for zathura to find the pdf in the build folder
 		end
 	},
-	{
-		'SirVer/ultisnips',
-		config = function()
-			vim.g.UltiSnipsExpandTrigger = '<tab>'
-			vim.g.UltiSnipsJumpForwardTrigger = '<tab>'
-			vim.g.UltiSnipsJumpBackwardTrigger = '<S-tab>'
-		end
+	-- {
+	-- 	'SirVer/ultisnips',
+	-- 	config = function()
+	-- 		vim.g.UltiSnipsExpandTrigger = '<tab>'
+	-- 		vim.g.UltiSnipsJumpForwardTrigger = '<tab>'
+	-- 		vim.g.UltiSnipsJumpBackwardTrigger = '<S-tab>'
+	-- 	end
 
-	},
-	{ "quangnguyen30192/cmp-nvim-ultisnips", },
-	{ "honza/vim-snippets", },
+	-- },
+	{ "honza/vim-snippets", }, -- seems like an engine for snippets
 	{
-		"jhofscheier/ltex-utils.nvim", -- for add to dictionary, ignore false positives etc.
-		dependencies = {
-			"neovim/nvim-lspconfig",
-			"nvim-telescope/telescope.nvim",
-		},
+		'L3MON4D3/LuaSnip',
+		dependencies = { 'rafamadriz/friendly-snippets' },
 	},
+
+	-- {
+	-- 	"jhofscheier/ltex-utils.nvim", -- for add to dictionary, ignore false positives etc.
+	-- 	ft = { "tex", },
+	-- 	dependencies = {
+	-- 		"neovim/nvim-lspconfig",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 	},
+	-- },
+	{
+		'Kicamon/markdown-table-mode.nvim',
+		config = function()
+			require('markdown-table-mode').setup()
+		end
+	},
+	-- {
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	cmd = "Copilot",
+	-- 	event = "InsertEnter",
+	-- 	config = function()
+	-- 		require("copilot").setup({
+	-- 			suggestion = { enabled = false },
+	-- 			panel = { enabled = false },
+	-- 		})
+	-- 	end,
+	-- },
 })

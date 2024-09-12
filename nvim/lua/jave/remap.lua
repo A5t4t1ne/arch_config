@@ -4,12 +4,12 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>')
 
 -- project navigation --
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>ps", function()
-	require("telescope.builtin").live_grep()
-end, { desc = "telescope Live Grep" })
-vim.keymap.set("n", '<leader>ff', function()
-	require('telescope.builtin').find_files()
-end, { desc = "telescope find files" })
+-- vim.keymap.set("n", "<leader>ps", function()
+-- 	require("telescope.builtin").live_grep()
+-- end, { desc = "telescope Live Grep" })
+-- vim.keymap.set("n", '<leader>ff', function()
+-- 	require('telescope.builtin').find_files()
+-- end, { desc = "telescope find files" })
 
 vim.keymap.set("n", "<leader>pe", function()
 	require('swenv.api').pick_venv()

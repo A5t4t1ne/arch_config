@@ -10,16 +10,48 @@ end)
 -- Configure autocompletion
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+local luasnip = require('luasnip')
+
+-- Load snippets from vim-snippets
+require("luasnip.loaders.from_snipmate").lazy_load()
 
 cmp.setup({
+	fields = { 'kind', 'abbr', 'menu' },
 	snippet = {
 		expand = function(args)
-			vim.fn["UltiSnips#Anon"](args.body)
+			luasnip.lsp_expand(args.body)
 		end,
 	},
+	mapping = cmp.mapping.preset.insert({
+		['<C-b>'] = cmp.mapping.scroll_docs(-4),
+		['<C-f>'] = cmp.mapping.scroll_docs(4),
+		['<C-Space>'] = cmp.mapping.complete(),
+		['<C-e>'] = cmp.mapping.abort(),
+		['<CR>'] = cmp.mapping.confirm({ select = true }),
+		['<Tab>'] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
+			else
+				fallback()
+			end
+		end, { 'i', 's' }),
+		['<S-Tab>'] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			elseif luasnip.jumpable(-1) then
+				luasnip.jump(-1)
+			else
+				fallback()
+			end
+		end, { 'i', 's' }),
+	}),
 	sources = {
 		{ name = 'nvim_lsp' },
-		{ name = 'ultisnips' },
+		{ name = 'luasnip' },
+		{ name = 'buffer' },
+		{ name = 'path' },
 	},
 	formatting = {
 		fields = { 'kind', 'abbr', 'menu' },
@@ -55,20 +87,10 @@ capabilities.workspace = {
 	},
 }
 
--- lsp_zero.configure('ltex', {
--- 	settings = {
--- 		ltex = {
--- 			language = "de-DE", -- Set German as the default language
--- 		},
--- 	},
--- 	filetypes = { "markdown", "tex", "latex" }, -- Specify the filetypes for ltex-ls
--- })
-
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
-		'tsserver',
 		'rust_analyzer',
 		'clangd',
 		'java_language_server',
@@ -103,15 +125,28 @@ require('mason-lspconfig').setup({
 })
 
 require("lspconfig").ltex.setup({
-    on_attach = function(client, bufnr)
-        -- your other on_attach code
-        -- for example, set keymaps here, like
-        -- vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
-        -- (see below code block for more details)
-        require("ltex-utils").on_attach(bufnr)
-    end,
-    settings = {
-        -- ltex = { your settings },
-    },
+	-- on_attach = function(client, bufnr)
+	-- 	-- your other on_attach code
+	-- 	-- for example, set keymaps here, like
+	-- 	-- vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
+	-- 	-- (see below code block for more details)
+	-- 	require("ltex-utils").on_attach(bufnr)
+	-- end,
+	settings = {
+		ltex = {
+			enabled = true,
+			language = "en-US",
+		},
+	},
+	flags = {
+		debounce_text_changes = 300,
+	},
 })
 
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "TelescopePrompt",
+	callback = function()
+		vim.b.ltex_enabled = false -- disable ltex for telescope
+	end,
+})
