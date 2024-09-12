@@ -1,6 +1,5 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export EDITOR:vim
 SETUVAR --export MYIP:http\x3a//icanhazip\x2ecom/
 SETUVAR --export OPENSSL_ROOT_DIR:/usr/bin/openssl
 SETUVAR --export XDG_CURRENT_DESKTOP:Hyprland
