@@ -27,16 +27,16 @@ cmp.setup({
 		['<C-f>'] = cmp.mapping.scroll_docs(4),
 		['<C-Space>'] = cmp.mapping.complete(),
 		['<C-e>'] = cmp.mapping.abort(),
-		['<CR>'] = cmp.mapping.confirm({ select = true }),
-		['<Tab>'] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			elseif luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump()
-			else
-				fallback()
-			end
-		end, { 'i', 's' }),
+		['<Tab>'] = cmp.mapping.confirm({ select = true }),
+		-- ['<Tab>'] = cmp.mapping(function(fallback)
+		-- 	if cmp.visible() then
+		-- 		cmp.select_next_item()
+		-- 	elseif luasnip.expand_or_jumpable() then
+		-- 		luasnip.expand_or_jump()
+		-- 	else
+		-- 		fallback()
+		-- 	end
+		-- end, { 'i', 's' }),
 		['<S-Tab>'] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
@@ -150,3 +150,15 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.b.ltex_enabled = false -- disable ltex for telescope
 	end,
 })
+
+
+require('lspconfig').solargraph.setup{
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+  settings = {
+    solargraph = {
+      diagnostics = true,
+      completion = true,
+      rename = true  -- Explicitly enable renaming
+    }
+  }
+}

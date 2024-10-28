@@ -235,11 +235,12 @@ require("lazy").setup({
 	},
 	{
 		"lervag/vimtex",
-		lazy = false,
 		ft = "tex",
 		config = function()
 			vim.g.vimtex_view_method = 'zathura'
 			vim.g.vimtex_compiler_method = 'latexmk'
+			vim.g.vimtex_compiler_progname = 'nvr'
+			vim.g.vimtex_quickfix_mode = 1
 			vim.g.vimtex_compiler_latexmk = {
 				build_dir = 'build',
 				callback = 1,
@@ -259,44 +260,41 @@ require("lazy").setup({
 			'--synctex-forward @line:@col:@tex build/@pdf' -- for zathura to find the pdf in the build folder
 		end
 	},
-	-- {
-	-- 	'SirVer/ultisnips',
-	-- 	config = function()
-	-- 		vim.g.UltiSnipsExpandTrigger = '<tab>'
-	-- 		vim.g.UltiSnipsJumpForwardTrigger = '<tab>'
-	-- 		vim.g.UltiSnipsJumpBackwardTrigger = '<S-tab>'
-	-- 	end
-
-	-- },
 	{ "honza/vim-snippets", }, -- seems like an engine for snippets
 	{
 		'L3MON4D3/LuaSnip',
 		dependencies = { 'rafamadriz/friendly-snippets' },
 	},
 
-	-- {
-	-- 	"jhofscheier/ltex-utils.nvim", -- for add to dictionary, ignore false positives etc.
-	-- 	ft = { "tex", },
-	-- 	dependencies = {
-	-- 		"neovim/nvim-lspconfig",
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 	},
-	-- },
+	{
+		"jhofscheier/ltex-utils.nvim", -- for add to dictionary, ignore false positives etc.
+		ft = { "tex", },
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"nvim-telescope/telescope.nvim",
+		},
+	},
 	{
 		'Kicamon/markdown-table-mode.nvim',
 		config = function()
 			require('markdown-table-mode').setup()
 		end
 	},
-	-- {
-	-- 	"zbirenbaum/copilot.lua",
-	-- 	cmd = "Copilot",
-	-- 	event = "InsertEnter",
-	-- 	config = function()
-	-- 		require("copilot").setup({
-	-- 			suggestion = { enabled = false },
-	-- 			panel = { enabled = false },
-	-- 		})
-	-- 	end,
-	-- },
+
+	{
+		'linux-cultist/venv-selector.nvim',
+		branch = "regexp",
+		dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim', 'mfussenegger/nvim-dap-python' },
+		opts = {
+			-- Your options go here
+			-- name = "venv",
+			-- auto_refresh = false
+		},
+		keys = {
+			-- Keymap to open VenvSelector to pick a venv.
+			{ '<leader>vs', '<cmd>VenvSelect<cr>' },
+			-- Keymap to retrieve the venv from a cache (the one previously used for the same project directory).
+			{ '<leader>vc', '<cmd>VenvSelectCached<cr>' },
+		},
+	},
 })

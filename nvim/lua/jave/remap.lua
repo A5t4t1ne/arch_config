@@ -50,7 +50,6 @@ vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<C
 vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'h', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>rr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>lf', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>', { noremap = true, silent = true })
 
@@ -60,17 +59,19 @@ vim.keymap.set('n', '<leader>r', function()
   local cmd = ''
 
   if filetype == 'python' then
-    cmd = 'python3'
+    cmd = 'python3 %'
   elseif filetype == 'javascript' then
-    cmd = 'node'
+    cmd = 'node %'
   elseif filetype == 'sh' then
-    cmd = 'bash'
+    cmd = 'bash %'
   elseif filetype == 'ruby' then
-    cmd = 'ruby'
+    cmd = 'ruby %'
+  elseif filetype == 'rust' then
+    cmd = 'cargo run'
   else
     print('No run command configured for filetype: ' .. filetype)
     return
   end
 
-  vim.cmd('! ' .. cmd .. ' %')
+  vim.cmd('! ' .. cmd)
 end, { noremap = true, silent = true, desc = 'Run current file' })
