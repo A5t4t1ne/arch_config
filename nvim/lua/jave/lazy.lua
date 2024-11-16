@@ -20,6 +20,8 @@ require("lazy").setup({
 		}
 	},
 
+
+
 	-- theme --
 	{
 		"folke/tokyonight.nvim",
@@ -134,9 +136,9 @@ require("lazy").setup({
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
-		build = function() vim.fn["mkdp#util#install"]() end,
+		build = "cd app && ./install.sh",
 		keys = {
-			{ "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", },
+			{ "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview" },
 		},
 	},
 	{
@@ -265,7 +267,6 @@ require("lazy").setup({
 		'L3MON4D3/LuaSnip',
 		dependencies = { 'rafamadriz/friendly-snippets' },
 	},
-
 	{
 		"jhofscheier/ltex-utils.nvim", -- for add to dictionary, ignore false positives etc.
 		ft = { "tex", },
@@ -297,4 +298,14 @@ require("lazy").setup({
 			{ '<leader>vc', '<cmd>VenvSelectCached<cr>' },
 		},
 	},
+
+	-- rust --
+	{
+		'mrcjkb/rustaceanvim',
+		version = '^5', -- Recommended
+		lazy = false, -- This plugin is already lazy
+	},
+
+	-- latex --
+	{ 'vigoux/ltex-ls.nvim' },
 })

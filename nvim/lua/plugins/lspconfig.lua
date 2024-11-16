@@ -91,12 +91,15 @@ capabilities.workspace = {
 require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
-		'rust_analyzer',
 		'clangd',
-		'java_language_server',
-		'biome',
 		'texlab',
 		'marksman',
+		'rust_analyzer',
+		'lua_ls',
+		'jedi_language_server',
+		'ruby_lsp',
+		'sorbet',
+		'ltex',
 	},
 
 	handlers = {

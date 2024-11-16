@@ -4,12 +4,6 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>')
 
 -- project navigation --
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
--- vim.keymap.set("n", "<leader>ps", function()
--- 	require("telescope.builtin").live_grep()
--- end, { desc = "telescope Live Grep" })
--- vim.keymap.set("n", '<leader>ff', function()
--- 	require('telescope.builtin').find_files()
--- end, { desc = "telescope find files" })
 
 vim.keymap.set("n", "<leader>pe", function()
 	require('swenv.api').pick_venv()
@@ -47,7 +41,7 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 -- LSP --
 vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'h', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>rr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })

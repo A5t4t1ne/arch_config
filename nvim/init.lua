@@ -4,6 +4,7 @@ require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.vim-fugitive")
 require("plugins.lspconfig")
+require('plugins.ltex_ls')
 
 vim.wo.relativenumber = true
 vim.wo.number = true
@@ -26,3 +27,4 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.diagnostic.config({
 	virtual_text = false
 })
+
