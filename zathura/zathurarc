@@ -1,0 +1,2 @@
+set reparent 1
+set synctex-editor-command "nvr --remote +'call cursor(%{line}, %{column})' %{input}"
