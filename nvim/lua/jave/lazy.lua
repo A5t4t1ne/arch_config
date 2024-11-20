@@ -299,13 +299,9 @@ require("lazy").setup({
 		},
 	},
 
-	-- rust --
-	{
-		'mrcjkb/rustaceanvim',
-		version = '^5', -- Recommended
-		lazy = false, -- This plugin is already lazy
-	},
-
 	-- latex --
-	{ 'vigoux/ltex-ls.nvim' },
+	{
+		'vigoux/ltex-ls.nvim',
+		ft = { 'tex' },
+	},
 })
