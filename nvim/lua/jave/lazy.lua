@@ -237,7 +237,7 @@ require("lazy").setup({
 	},
 	{
 		"lervag/vimtex",
-		ft = "tex",
+		ft = { "tex" },
 		config = function()
 			vim.g.vimtex_view_method = 'zathura'
 			vim.g.vimtex_compiler_method = 'latexmk'
@@ -269,7 +269,7 @@ require("lazy").setup({
 	},
 	{
 		"jhofscheier/ltex-utils.nvim", -- for add to dictionary, ignore false positives etc.
-		ft = { "tex", },
+		ft = { "tex", "bib" },
 		dependencies = {
 			"neovim/nvim-lspconfig",
 			"nvim-telescope/telescope.nvim",
@@ -303,5 +303,15 @@ require("lazy").setup({
 	{
 		'vigoux/ltex-ls.nvim',
 		ft = { 'tex' },
+	},
+
+	-- typst --
+	{
+		'chomosuke/typst-preview.nvim',
+		ft = 'typst',
+		version = '1.*',
+		config = function()
+			require 'typst-preview'.setup {}
+		end,
 	},
 })

@@ -100,12 +100,30 @@ require('mason-lspconfig').setup({
 		'ruby_lsp',
 		'sorbet',
 		'ltex',
+		'typst_lsp',
+		'gopls',
+		-- needs to be manually installed: 
+		-- 'goimports',
+		-- 'gofumpt',
+		-- 'gomodifytags',  -- Modify struct field tags
+		-- 'impl'
 	},
 
 	handlers = {
 		function(server_name)
-			require('lspconfig')[server_name].setup({})
+			local lspconfig = require('lspconfig')
+			if server_name == "typst_lsp" then
+				lspconfig.typst_lsp.setup({
+					filetypes = { "typ" }, -- File type for Typst files
+					cmd = { "typst-lsp" }, -- Ensure typst-lsp is in your PATH
+					root_dir = lspconfig.util.root_pattern(".git", "*.typ"),
+					settings = {}, -- Add Typst-specific settings if needed
+				})
+			else
+				require('lspconfig')[server_name].setup({})
+			end
 		end,
+
 
 
 		texlab = function()
@@ -127,25 +145,6 @@ require('mason-lspconfig').setup({
 	}
 })
 
-require("lspconfig").ltex.setup({
-	-- on_attach = function(client, bufnr)
-	-- 	-- your other on_attach code
-	-- 	-- for example, set keymaps here, like
-	-- 	-- vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
-	-- 	-- (see below code block for more details)
-	-- 	require("ltex-utils").on_attach(bufnr)
-	-- end,
-	settings = {
-		ltex = {
-			enabled = true,
-			language = "en-US",
-		},
-	},
-	flags = {
-		debounce_text_changes = 300,
-	},
-})
-
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "TelescopePrompt",
@@ -155,13 +154,13 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 
-require('lspconfig').solargraph.setup{
-  capabilities = require('cmp_nvim_lsp').default_capabilities(),
-  settings = {
-    solargraph = {
-      diagnostics = true,
-      completion = true,
-      rename = true  -- Explicitly enable renaming
-    }
-  }
+require('lspconfig').solargraph.setup {
+	capabilities = require('cmp_nvim_lsp').default_capabilities(),
+	settings = {
+		solargraph = {
+			diagnostics = true,
+			completion = true,
+			rename = true -- Explicitly enable renaming
+		}
+	}
 }

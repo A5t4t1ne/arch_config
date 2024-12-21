@@ -4,14 +4,15 @@ path=(
 	'/usr/local/texlive/2024/bin/x86_64-linux/'
 	'/home/dave/.local/share/bob/nvim-bin' 
 	'/usr/lib/jvm/default/bin/'
-	'/home/dave/.local/share/gem/ruby/3.3.0/bin'
 	'~/.local/bin/'
+    '/usr/local/go/bin'
 	$path 
 )
 export PATH
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
 
 fastfetch -c $HOME/.config/fastfetch/config-v2.jsonc
-
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -24,12 +25,13 @@ fi
 if [[ ":$FPATH:" != *":/home/dave/.zsh/completions:"* ]]; then export FPATH="/home/dave/.zsh/completions:$FPATH"; fi
 
 
-ZSH_THEME="steeef"
+ZSH_THEME=""
 
 plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
 	fzf
+	asdf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -40,26 +42,24 @@ alias lt='ls -a -R --level=1'
 alias gits='git status'
 alias pping='ping -c 4 8.8.8.8'
 alias ..='cd ..'
-cd () {
-    if builtin cd "$@" 2>/tmp/cd_err; then
-        ls
-    else
-		echo "cd: $(tail -c +9 /tmp/cd_err)" >&2
-    fi
-}
 
+cd() {
+  builtin cd "$@" && /bin/ls -a --color
+}
 
 
 alias cp='cp -i '
 alias mv='mv -i '
 alias rm='gio trash '
 alias mkdir='mkdir -p '
-alias ps='ps auxf'
+alias ps='ps -auxf'
 alias ping='ping -c 4'
 alias less='less -R'
 alias cls='clear '
 alias apt='sudo apt '
 alias svi='sudo vi '
+alias n='nvim'
+
 
 alias rmd='/bin/rm  --recursive --force --verbose '
 
@@ -82,7 +82,7 @@ alias lla='ls -Al'                # List and Hidden Files
 alias las='ls -A'                 # Hidden Files
 alias lls='ls -l'                 # List
 
-alias p="ps aux | grep "
+alias p="ps -A | grep "
 
 alias kssh='kitty +kitten ssh '
 
@@ -154,11 +154,8 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 
 # init some plugins
 eval "$(zoxide init zsh)"
-source /etc/profile.d/rvm.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
 # . "/home/dave/.deno/env"
 # Initialize zsh completions (added by deno install script)
 autoload -Uz compinit
@@ -167,7 +164,9 @@ compinit
 
 bindkey \^U backward-kill-line # Ctrl+U should only delete to the left of the cursor
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+eval "$(starship init zsh)"

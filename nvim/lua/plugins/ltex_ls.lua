@@ -1,8 +1,8 @@
-require 'ltex-ls'.setup {
+require("lspconfig").ltex.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   use_spellfile = false,
-  filetypes = { "latex", "tex", "bib", },
+  filetypes = { "tex", "bib", },
   settings = {
     ltex = {
       enabled = { "latex", "tex", "bib", },
@@ -13,9 +13,6 @@ require 'ltex-ls'.setup {
         enablePickyRules = true,
         motherTongue = "en",
       },
-      -- disabledRules = {
-      --   fr = { "APOS_TYP", "FRENCH_WHITESPACE" }
-      -- },
       dictionary = (function()
         -- For dictionary, search for files in the runtime to have
         -- and include them as externals the format for them is
@@ -41,4 +38,4 @@ require 'ltex-ls'.setup {
       end)(),
     },
   },
-}
+})
