@@ -98,9 +98,8 @@ require('mason-lspconfig').setup({
 		'lua_ls',
 		'jedi_language_server',
 		'ruby_lsp',
-		'sorbet',
+		-- 'sorbet',
 		'ltex',
-		'typst_lsp',
 		'gopls',
 		-- needs to be manually installed: 
 		-- 'goimports',
@@ -108,7 +107,7 @@ require('mason-lspconfig').setup({
 		-- 'gomodifytags',  -- Modify struct field tags
 		-- 'impl'
 	},
-
+	automatic_installation = false,
 	handlers = {
 		function(server_name)
 			local lspconfig = require('lspconfig')
