@@ -101,7 +101,7 @@ require('mason-lspconfig').setup({
 		-- 'sorbet',
 		'ltex',
 		'gopls',
-		-- needs to be manually installed: 
+		-- needs to be manually installed:
 		-- 'goimports',
 		-- 'gofumpt',
 		-- 'gomodifytags',  -- Modify struct field tags
@@ -117,6 +117,16 @@ require('mason-lspconfig').setup({
 					cmd = { "typst-lsp" }, -- Ensure typst-lsp is in your PATH
 					root_dir = lspconfig.util.root_pattern(".git", "*.typ"),
 					settings = {}, -- Add Typst-specific settings if needed
+				})
+			elseif server_name == "arduino_language_server" then
+				lspconfig.arduino_language_server.setup({
+					cmd = {
+						"arduino-language-server",
+						"-cli-config", "/home/dave/.arduino15/arduino-cli.yaml",
+						"-fqbn", "esp32:esp32:nodemcu-32s"
+					},
+					filetypes = { "arduino" },
+					root_dir = require('lspconfig.util').root_pattern("*.ino", "sketch.yaml"),
 				})
 			else
 				require('lspconfig')[server_name].setup({})

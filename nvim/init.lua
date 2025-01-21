@@ -28,3 +28,12 @@ vim.diagnostic.config({
 	virtual_text = false
 })
 
+require('lspconfig').arduino_language_server.setup {
+  cmd = {
+    "arduino-language-server",
+    "-cli-config", "/home/dave/.arduino15/arduino-cli.yaml",
+    "-fqbn", "esp32:esp32:nodemcu-32s"
+  },
+  filetypes = { "arduino" },
+  root_dir = require('lspconfig.util').root_pattern("*.ino", "sketch.yaml"),
+}

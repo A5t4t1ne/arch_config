@@ -1,4 +1,4 @@
-local colemak = true -- not fully supported, some keys are not rebound yet
+local colemak = false -- not fully supported, some keys are not rebound yet
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = ' '
@@ -27,20 +27,22 @@ if colemak then
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "O", "L", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "h", "", { noremap = true })
 
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "nzz", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "K", "Nzz", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "u", "i", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "U", "I", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "l", "u", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "y", "o", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "j", "z", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "z", "o", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "x", "y", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "c", "x", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "d", "c", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "y", "o", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "y", "o", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "y", "o", { noremap = true })
+
+	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "e", { noremap = true })
+	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "l", "i", { noremap = true })
+	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "e", { noremap = true })
+	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "m", "o", { noremap = true })
+	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "M", "O", { noremap = true })
+
+	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "nzz", { noremap = true })
+	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "K", "Nzz", { noremap = true })
+	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "u", "i", { noremap = true })
+	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "U", "I", { noremap = true })
+	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "l", "u", { noremap = true })
+	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "y", "o", { noremap = true })
+	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "j", "z", { noremap = true })
+	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "z", "o", { noremap = true })
+	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "q", "y", { noremap = true })
 
 	-- override explorer keybinds --
 	vim.api.nvim_create_autocmd('FileType', {
@@ -59,6 +61,18 @@ if colemak then
 	vim.keymap.set('n', '<C-w>e', '<C-w>j', { noremap = true }) -- Down
 	vim.keymap.set('n', '<C-w>i', '<C-w>k', { noremap = true }) -- Up
 	vim.keymap.set('n', '<C-w>o', '<C-w>l', { noremap = true }) -- Right
+
+
+	vim.keymap.set('n', "<C-n>", function() require("harpoon"):list():select(1) end,
+		{ noremap = true, silent = true, desc = "harpoon select 1" })
+	vim.keymap.set('n', "<C-e>", function() require("harpoon"):list():select(2) end,
+		{ noremap = true, silent = true, desc = "harpoon select 2" })
+	vim.keymap.set('n', "<C-i>", function() require("harpoon"):list():select(3) end,
+		{ noremap = true, silent = true, desc = "harpoon select 3" })
+	vim.keymap.set('n', "<C-o>", function() require("harpoon"):list():select(4) end,
+		{ noremap = true, silent = true, desc = "harpoon select 4" })
+
+	vim.api.nvim_set_keymap('n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 else
 	vim.keymap.set("n", "n", "nzz")
 
@@ -75,6 +89,8 @@ else
 	vim.keymap.set({ 'n' }, "<C-w>k", "<C-w>j", { noremap = true })
 	vim.keymap.set({ 'n' }, "<C-w>l", "<C-w>k", { noremap = true })
 	vim.keymap.set({ 'n' }, "<C-w>ö", "<C-w>l", { noremap = true })
+
+	vim.api.nvim_set_keymap('n', 'h', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 end
 
 
@@ -90,7 +106,6 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 -- LSP --
 vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', 'h', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>rr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fm', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>',
