@@ -1,28 +1,35 @@
 export ZSH="$HOME/.oh-my-zsh"
+. "$HOME/.asdf/asdf.sh"
+
 path=(
 	'/home/linuxbrew/.linuxbrew/bin'
 	'/usr/local/texlive/2024/bin/x86_64-linux/'
 	'/home/dave/.local/share/bob/nvim-bin' 
 	'/usr/lib/jvm/default/bin/'
 	'~/.local/bin/'
-    '/usr/local/go/bin'
+   	'/usr/local/go/bin'
+	'/var/lib/snapd/snap/bin'
+	'/home/dave/.asdf/installs/rust/1.83.0/bin'
 	$path 
 )
 export PATH
-export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
-export PATH=$JAVA_HOME/bin:$PATH
+# export JAVA_HOME=$(asdf where java)
+# export PATH=$JAVA_HOME/bin:$PATH
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
 
 fastfetch -c $HOME/.config/fastfetch/config-v2.jsonc
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # Add deno completions to search path
-if [[ ":$FPATH:" != *":/home/dave/.zsh/completions:"* ]]; then export FPATH="/home/dave/.zsh/completions:$FPATH"; fi
+# if [[ ":$FPATH:" != *":/home/dave/.zsh/completions:"* ]]; then export FPATH="/home/dave/.zsh/completions:$FPATH"; fi
 
 
 ZSH_THEME=""
@@ -30,14 +37,11 @@ ZSH_THEME=""
 plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
-	fzf
-	asdf
 )
 
 source $ZSH/oh-my-zsh.sh
 
 
-alias ll='ls -la'
 alias lt='ls -a -R --level=1'
 alias gits='git status'
 alias pping='ping -c 4 8.8.8.8'
@@ -50,7 +54,7 @@ cd() {
 
 alias cp='cp -i '
 alias mv='mv -i '
-alias rm='gio trash '
+alias rm='trash'
 alias mkdir='mkdir -p '
 alias ps='ps -auxf'
 alias ping='ping -c 4'
@@ -64,29 +68,29 @@ alias n='nvim'
 alias rmd='/bin/rm  --recursive --force --verbose '
 
 # Alias's for multiple directory listing commands
-alias la='ls -Alh'                # show hidden files
-alias ls='ls -a --color '		  # add colors and file type extensions
-alias lx='ls -lXBh'               # sort by extension
-alias lk='ls -lSrh'               # sort by size
-alias lc='ls -ltcrh'              # sort by change time
-alias lu='ls -lturh'              # sort by access time
-alias lr='ls -lRh'                # recursive ls
-alias lt='ls -ltrh'               # sort by date
-alias lm='ls -alh |more'          # pipe through 'more'
-alias lw='ls -xAh'                # wide listing format
-alias ll='ls -Fls'                # long listing format
-alias labc='ls -lap'              # alphabetical sort
-alias lf="ls -l | egrep -v '^d'"  # files only
-alias ldir="ls -l | egrep '^d'"   # directories only
-alias lla='ls -Al'                # List and Hidden Files
-alias las='ls -A'                 # Hidden Files
-alias lls='ls -l'                 # List
+alias ls='ls -a --color=auto'
+alias lx='ls -lXBh'               	# sort by extension
+alias lk='ls -lSrh'               	# sort by size
+alias lc='ls -ltcrh'              	# sort by change time
+alias lu='ls -lturh'              	# sort by access time
+alias lr='ls -lRh'                	# recursive ls
+alias lt='ls -ltrh'               	# sort by date
+alias lm='ls -alh |more'          	# pipe through 'more'
+alias lw='ls -xAh'                	# wide listing format
+alias labc='ls -lap'                # alphabetical sort
+alias lf="ls -l | egrep -v '^d'"  	# files only
+alias ldir="ls -l | egrep '^d'"   	# directories only
+alias ll='ls -lah'					# long listing format
+alias lla='ls -Al'                  # List and Hidden Files
+alias las='ls -A'                 	# Hidden Files
+alias lls='ls -l'                 	# List
 
 alias p="ps -A | grep "
 
 alias kssh='kitty +kitten ssh '
 
-alias cat=batcat
+alias cat=bat
+
 
 #######################################################
 # SPECIAL FUNCTIONS
@@ -118,32 +122,22 @@ extract() {
 
 # Copy file with a progress bar
 cpp() {
-    set -e
-    strace -q -ewrite cp -- "${1}" "${2}" 2>&1 |
-    awk '{
-        count += $NF
-        if (count % 10 == 0) {
-            percent = count / total_size * 100
-            printf "%3d%% [", percent
-            for (i=0;i<=percent;i++)
-                printf "="
-            printf ">"
-            for (i=percent;i<100;i++)
-                printf " "
-            printf "]\r"
-        }
-    }
-    END { print "" }' total_size="$(stat -c '%s' "${1}")" count=0
+	rsync -ah --progress "${1}" "${2}"
 }
 
+gitd() {
+    git diff --name-only --relative --diff-filter=d | xargs bat --diff
+}
 
-
+#######################################################
+# SOME MORE STUFF
+#######################################################
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-# Color for manpages in less makes manpages a little easier to read
+# Color for manpages in less. Makes manpages a little easier to read
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'
@@ -158,15 +152,45 @@ eval "$(zoxide init zsh)"
 
 # . "/home/dave/.deno/env"
 # Initialize zsh completions (added by deno install script)
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
 
 
 bindkey \^U backward-kill-line # Ctrl+U should only delete to the left of the cursor
 
-# source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export LANGUAGE=en_US
 
 eval "$(starship init zsh)"
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+# zinit light-mode for \
+#     zdharma-continuum/zinit-annex-as-monitor \
+#     zdharma-continuum/zinit-annex-bin-gem-node \
+#     zdharma-continuum/zinit-annex-patch-dl \
+#     zdharma-continuum/zinit-annex-rust
+
+### End of Zinit's installer chunk
+#
+# ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+# [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+# [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+# source "${ZINIT_HOME}/zinit.zsh"#
