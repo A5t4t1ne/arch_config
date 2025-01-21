@@ -89,3 +89,4 @@ spectaclerc
 systemsettingsrc
 trashrc
 xsettingsd/
+nvim/lazy-lock.json
