@@ -1,4 +1,6 @@
-export ZSH="$HOME/.oh-my-zsh"
+#######################################################
+# PATH UPDATES
+#######################################################
 . "$HOME/.asdf/asdf.sh"
 
 path=(
@@ -13,39 +15,21 @@ path=(
 	$path 
 )
 export PATH
-# export JAVA_HOME=$(asdf where java)
-# export PATH=$JAVA_HOME/bin:$PATH
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+export LANGUAGE=en_US
 
 
-fastfetch -c $HOME/.config/fastfetch/config-v2.jsonc
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
-# Add deno completions to search path
-# if [[ ":$FPATH:" != *":/home/dave/.zsh/completions:"* ]]; then export FPATH="/home/dave/.zsh/completions:$FPATH"; fi
 
 
-ZSH_THEME=""
-
-plugins=(
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-)
-
-source $ZSH/oh-my-zsh.sh
-
-
+#######################################################
+# ALIASES
+#######################################################
 alias lt='ls -a -R --level=1'
 alias gits='git status'
 alias pping='ping -c 4 8.8.8.8'
 alias ..='cd ..'
+alias cat=bat
 
 cd() {
   builtin cd "$@" && /bin/ls -a --color
@@ -56,14 +40,10 @@ alias cp='cp -i '
 alias mv='mv -i '
 alias rm='trash'
 alias mkdir='mkdir -p '
-alias ps='ps -auxf'
+alias ps='ps -aux'
 alias ping='ping -c 4'
 alias less='less -R'
-alias cls='clear '
-alias apt='sudo apt '
-alias svi='sudo vi '
 alias n='nvim'
-
 
 alias rmd='/bin/rm  --recursive --force --verbose '
 
@@ -71,25 +51,18 @@ alias rmd='/bin/rm  --recursive --force --verbose '
 alias ls='ls -a --color=auto'
 alias lx='ls -lXBh'               	# sort by extension
 alias lk='ls -lSrh'               	# sort by size
-alias lc='ls -ltcrh'              	# sort by change time
-alias lu='ls -lturh'              	# sort by access time
-alias lr='ls -lRh'                	# recursive ls
 alias lt='ls -ltrh'               	# sort by date
-alias lm='ls -alh |more'          	# pipe through 'more'
-alias lw='ls -xAh'                	# wide listing format
-alias labc='ls -lap'                # alphabetical sort
 alias lf="ls -l | egrep -v '^d'"  	# files only
 alias ldir="ls -l | egrep '^d'"   	# directories only
 alias ll='ls -lah'					# long listing format
-alias lla='ls -Al'                  # List and Hidden Files
-alias las='ls -A'                 	# Hidden Files
-alias lls='ls -l'                 	# List
 
-alias p="ps -A | grep "
+alias p="ps -aux | \grep --color=auto "
 
 alias kssh='kitty +kitten ssh '
 
-alias cat=bat
+
+# Not really an alias, but still keeping it here
+bindkey \^U backward-kill-line # Ctrl+U should only delete to the left of the cursor
 
 
 #######################################################
@@ -130,7 +103,7 @@ gitd() {
 }
 
 #######################################################
-# SOME MORE STUFF
+# SOME MORE RANDOM STUFF
 #######################################################
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -146,26 +119,18 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
-# init some plugins
+
+
+#######################################################
+# START PLUGINS AND TOOLS
+#######################################################
+fastfetch -c $HOME/.config/fastfetch/config-v2.jsonc
+
 eval "$(zoxide init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# . "/home/dave/.deno/env"
-# Initialize zsh completions (added by deno install script)
-# autoload -Uz compinit
-# compinit
-
-
-bindkey \^U backward-kill-line # Ctrl+U should only delete to the left of the cursor
-
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# source ~/powerlevel10k/powerlevel10k.zsh-theme
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export LANGUAGE=en_US
-
 eval "$(starship init zsh)"
+
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -180,17 +145,16 @@ source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-# zinit light-mode for \
-#     zdharma-continuum/zinit-annex-as-monitor \
-#     zdharma-continuum/zinit-annex-bin-gem-node \
-#     zdharma-continuum/zinit-annex-patch-dl \
-#     zdharma-continuum/zinit-annex-rust
 
-### End of Zinit's installer chunk
-#
-# ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-# [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-# [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-# source "${ZINIT_HOME}/zinit.zsh"#
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+
+# Load zsh-autosuggestions
+zinit ice wait lucid atload'_zsh_autosuggest_start'
+zinit light zsh-users/zsh-autosuggestions
+
+# Load zsh-syntax-highlighting
+zinit ice wait lucid
+zinit light zdharma-continuum/fast-syntax-highlighting
