@@ -45,24 +45,23 @@ alias ping='ping -c 4'
 alias less='less -R'
 alias n='nvim'
 
-alias rmd='/bin/rm  --recursive --force --verbose '
+alias rmd='/bin/rm --recursive --force --verbose '
 
 # Alias's for multiple directory listing commands
 alias ls='ls -a --color=auto'
 alias lx='ls -lXBh'               	# sort by extension
 alias lk='ls -lSrh'               	# sort by size
 alias lt='ls -ltrh'               	# sort by date
-alias lf="ls -l | egrep -v '^d'"  	# files only
-alias ldir="ls -l | egrep '^d'"   	# directories only
+alias lf="ls -l | grep -vE '^d'"  	# files only
+alias ldir="ls -l | grep -E '^d'"  	# directories only
 alias ll='ls -lah'					# long listing format
 
 alias p="ps -aux | \grep --color=auto "
 
 alias kssh='kitty +kitten ssh '
+alias pparu='sudo pacman'
 
 
-# Not really an alias, but still keeping it here
-bindkey \^U backward-kill-line # Ctrl+U should only delete to the left of the cursor
 
 
 #######################################################
@@ -102,12 +101,14 @@ gitd() {
     git diff --name-only --relative --diff-filter=d | xargs bat --diff
 }
 
+
 #######################################################
 # SOME MORE RANDOM STUFF
 #######################################################
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+FUNCNEST=100
 setopt appendhistory
 
 # Color for manpages in less. Makes manpages a little easier to read
@@ -158,3 +159,21 @@ zinit light zsh-users/zsh-autosuggestions
 # Load zsh-syntax-highlighting
 zinit ice wait lucid
 zinit light zdharma-continuum/fast-syntax-highlighting
+
+
+#######################################################
+# KEYBINDS
+#######################################################
+bindkey '^F' autosuggest-accept
+bindkey '^U' backward-kill-line # Ctrl+U should only delete to the left of the cursor
+bindkey '^K' kill-line
+bindkey '^P' up-line-or-search
+bindkey '^N' down-line-or-search
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '\e[3~' delete-char
+
+
+
