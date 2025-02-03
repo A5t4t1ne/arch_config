@@ -1,4 +1,4 @@
-local colemak = false -- not fully supported, some keys are not rebound yet
+local colemak = true -- not fully supported, some keys are not rebound yet
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = ' '
@@ -30,9 +30,12 @@ if colemak then
 
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "e", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "l", "i", { noremap = true })
+	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "L", "I", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "e", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "m", "o", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "M", "O", { noremap = true })
+	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "j", "n", { noremap = true })
+	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "J", "N", { noremap = true })
 
 	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "nzz", { noremap = true })
 	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "K", "Nzz", { noremap = true })
