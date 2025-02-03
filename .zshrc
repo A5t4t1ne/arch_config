@@ -44,6 +44,7 @@ alias less='less -R'
 alias n='nvim'
 
 alias rmd='/bin/rm --recursive --force --verbose '
+alias rmd='/bin/rm --recursive --force --verbose '
 
 # Alias's for multiple directory listing commands
 alias ls='ls -a --color=auto'
@@ -52,11 +53,14 @@ alias lk='ls -lSrh'               	# sort by size
 alias lt='ls -ltrh'               	# sort by date
 alias lf="ls -l | grep -vE '^d'"  	# files only
 alias ldir="ls -l | grep -E '^d'"  	# directories only
+alias lf="ls -l | grep -vE '^d'"  	# files only
+alias ldir="ls -l | grep -E '^d'"  	# directories only
 alias ll='ls -lah'					# long listing format
 
 alias p="ps -aux | \grep --color=auto "
 
 alias kssh='kitty +kitten ssh '
+alias pparu='sudo pacman'
 alias pparu='sudo pacman'
 
 
@@ -100,12 +104,14 @@ gitd() {
 }
 
 
+
 #######################################################
 # SOME MORE RANDOM STUFF
 #######################################################
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+FUNCNEST=100
 FUNCNEST=100
 setopt appendhistory
 
