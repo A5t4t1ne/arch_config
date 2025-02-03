@@ -64,6 +64,7 @@ disabled = true
 
 [golang]
 format = '\[[$symbol($version)]($style)\]'
+disabled = true
 
 [gradle]
 format = '\[[$symbol($version)]($style)\]'
@@ -145,6 +146,7 @@ format = '\[[$symbol($version)]($style)\]'
 
 [python]
 format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+disabled = true
 
 [raku]
 format = '\[[$symbol($version-$vm_version)]($style)\]'
