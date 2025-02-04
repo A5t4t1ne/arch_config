@@ -156,6 +156,8 @@ zinit wait lucid for \
     zsh-users/zsh-autosuggestions \
     zdharma-continuum/fast-syntax-highlighting
 
+# Allow for case-insensitive and partial name completion
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 
 #######################################################
 # KEYBINDS
