@@ -98,6 +98,7 @@ require('mason-lspconfig').setup({
 		'lua_ls',
 		'jedi_language_server',
 		'ruby_lsp',
+		'tinymist',
 		-- 'sorbet',
 		'ltex',
 		'gopls',
@@ -111,12 +112,13 @@ require('mason-lspconfig').setup({
 	handlers = {
 		function(server_name)
 			local lspconfig = require('lspconfig')
-			if server_name == "typst_lsp" then
-				lspconfig.typst_lsp.setup({
-					filetypes = { "typ" }, -- File type for Typst files
-					cmd = { "typst-lsp" }, -- Ensure typst-lsp is in your PATH
-					root_dir = lspconfig.util.root_pattern(".git", "*.typ"),
-					settings = {}, -- Add Typst-specific settings if needed
+			if server_name == "tinymist" then
+				lspconfig.tinymist.setup({
+					settings = {
+						formatterMode = "typstyle",
+						exportPdf = "onType",
+						semanticTokens = "disable"
+					}
 				})
 			elseif server_name == "arduino_language_server" then
 				lspconfig.arduino_language_server.setup({
@@ -163,6 +165,18 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 
+-- This is necessary so that tinymist knows which is the main file
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = "main.typ", 
+    callback = function()
+        vim.lsp.buf.execute_command({
+            command = 'tinymist.pinMain',
+            arguments = { vim.api.nvim_buf_get_name(0) }
+        })
+    end,
+})
+
+
 require('lspconfig').solargraph.setup {
 	capabilities = require('cmp_nvim_lsp').default_capabilities(),
 	settings = {
@@ -173,3 +187,5 @@ require('lspconfig').solargraph.setup {
 		}
 	}
 }
+
+require('lspconfig').tinymist.setup({})

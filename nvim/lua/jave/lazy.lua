@@ -314,4 +314,11 @@ require("lazy").setup({
 			require 'typst-preview'.setup {}
 		end,
 	},
+	{
+		"chomosuke/typst-preview.nvim",
+		keys = {
+			{ '<leader>tp', '<cmd>TypstPreview<CR>' },
+			{ '<leader>ts', '<cmd>TypstPreviewStop<CR>' },
+		},
+	},
 })
