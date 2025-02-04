@@ -37,16 +37,6 @@ if colemak then
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "j", "n", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "J", "N", { noremap = true })
 
-	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "nzz", { noremap = true })
-	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "K", "Nzz", { noremap = true })
-	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "u", "i", { noremap = true })
-	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "U", "I", { noremap = true })
-	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "l", "u", { noremap = true })
-	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "y", "o", { noremap = true })
-	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "j", "z", { noremap = true })
-	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "z", "o", { noremap = true })
-	-- vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "q", "y", { noremap = true })
-
 	-- override explorer keybinds --
 	vim.api.nvim_create_autocmd('FileType', {
 		pattern = 'netrw',
@@ -76,6 +66,9 @@ if colemak then
 		{ noremap = true, silent = true, desc = "harpoon select 4" })
 
 	vim.api.nvim_set_keymap('n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
+
+	vim.keymap.set({ "n" }, "<A-e>", "o<Esc>", { noremap = true })
+	vim.keymap.set({ "n" }, "<A-i>", "O<Esc>", { noremap = true })
 else
 	vim.keymap.set("n", "n", "nzz")
 
@@ -94,17 +87,21 @@ else
 	vim.keymap.set({ 'n' }, "<C-w>ö", "<C-w>l", { noremap = true })
 
 	vim.api.nvim_set_keymap('n', 'h', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
+
+	vim.keymap.set({ "n" }, "<A-k>", "o<Esc>", { noremap = true })
+	vim.keymap.set({ "n" }, "<A-l>", "O<Esc>", { noremap = true })
 end
 
 
 -- editing --
 vim.keymap.set("v", "<leader>p", "\"_dP")                     -- paste without overwriting clipboard
 vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<C-c><cmd>w<cr>") -- save
-vim.keymap.set({ "n" }, "<A-k>", "o<Esc>", { noremap = true })
-vim.keymap.set({ "n" }, "<A-l>", "O<Esc>", { noremap = true })
 
 -- plugins-specific --
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+vim.keymap.set('n', '<leader>tt', '<cmd>Telescope<CR>')
+vim.keymap.set('n', '<leader>td', '<cmd>Telescope diagnostics<CR>')
+
 
 -- LSP --
 vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
