@@ -14,6 +14,7 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.autoindent = true
 vim.opt.conceallevel = 2
+vim.bo.expandtab = true
 
 vim.opt.signcolumn = "number"
 vim.wo.signcolumn = "yes"
@@ -28,12 +29,12 @@ vim.diagnostic.config({
 	virtual_text = false
 })
 
-require('lspconfig').arduino_language_server.setup {
-  cmd = {
-    "arduino-language-server",
-    "-cli-config", "/home/dave/.arduino15/arduino-cli.yaml",
-    "-fqbn", "esp32:esp32:nodemcu-32s"
-  },
-  filetypes = { "arduino" },
-  root_dir = require('lspconfig.util').root_pattern("*.ino", "sketch.yaml"),
-}
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "typst",
+  callback = function()
+    vim.bo.shiftwidth = 4
+    vim.bo.tabstop = 4
+    vim.bo.expandtab = true
+  end
+})

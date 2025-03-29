@@ -14,8 +14,6 @@ end, { desc = "switch python venv" })
 -- movement --
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "<C-o>", "<C-o>zz")
-vim.keymap.set("n", "<C-i>", "<C-i>zz")
 
 if colemak then
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "n", "<Left>", { noremap = true })
@@ -27,6 +25,9 @@ if colemak then
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "O", "L", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "h", "", { noremap = true })
 
+	-- jump to previous/next
+	vim.keymap.set('n', '<C-y>', '<C-o>', { noremap = true })
+	vim.keymap.set('n', '<C-i>', '<C-l>', { noremap = true })
 
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "e", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "l", "i", { noremap = true })
@@ -34,8 +35,8 @@ if colemak then
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "e", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "m", "o", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "M", "O", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "j", "n", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "J", "N", { noremap = true })
+	vim.keymap.set({ 'n' }, "j", "nzz", { noremap = true })
+	vim.keymap.set({ 'n' }, "J", "Nzz", { noremap = true })
 
 	-- override explorer keybinds --
 	vim.api.nvim_create_autocmd('FileType', {
@@ -50,12 +51,14 @@ if colemak then
 	})
 
 
+	-- Window navigation
 	vim.keymap.set('n', '<C-w>n', '<C-w>h', { noremap = true }) -- Left
 	vim.keymap.set('n', '<C-w>e', '<C-w>j', { noremap = true }) -- Down
 	vim.keymap.set('n', '<C-w>i', '<C-w>k', { noremap = true }) -- Up
 	vim.keymap.set('n', '<C-w>o', '<C-w>l', { noremap = true }) -- Right
 
 
+	-- harpoon
 	vim.keymap.set('n', "<C-n>", function() require("harpoon"):list():select(1) end,
 		{ noremap = true, silent = true, desc = "harpoon select 1" })
 	vim.keymap.set('n', "<C-e>", function() require("harpoon"):list():select(2) end,
@@ -67,8 +70,13 @@ if colemak then
 
 	vim.api.nvim_set_keymap('n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 
+	-- inserting empty lines
 	vim.keymap.set({ "n" }, "<A-e>", "o<Esc>", { noremap = true })
 	vim.keymap.set({ "n" }, "<A-i>", "O<Esc>", { noremap = true })
+
+	vim.keymap.set("n", "<C-;>", "<C-o>zz", { noremap = true })
+	vim.keymap.set("n", "<C-y>", "<C-i>zz", { noremap = true })
+
 else
 	vim.keymap.set("n", "n", "nzz")
 
@@ -86,21 +94,26 @@ else
 	vim.keymap.set({ 'n' }, "<C-w>l", "<C-w>k", { noremap = true })
 	vim.keymap.set({ 'n' }, "<C-w>ö", "<C-w>l", { noremap = true })
 
-	vim.api.nvim_set_keymap('n', 'h', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 
 	vim.keymap.set({ "n" }, "<A-k>", "o<Esc>", { noremap = true })
 	vim.keymap.set({ "n" }, "<A-l>", "O<Esc>", { noremap = true })
+
+	vim.keymap.set("n", "<C-o>", "<C-o>zz")
+	vim.keymap.set("n", "<C-i>", "<C-i>zz")
 end
+
+
+-- random stuff
+vim.keymap.set('n', '<leader>bn', '<cmd>enew<cr>', { noremap = true }) -- new buffer
 
 
 -- editing --
 vim.keymap.set("v", "<leader>p", "\"_dP")                     -- paste without overwriting clipboard
 vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<C-c><cmd>w<cr>") -- save
 
+
 -- plugins-specific --
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
-vim.keymap.set('n', '<leader>tt', '<cmd>Telescope<CR>')
-vim.keymap.set('n', '<leader>td', '<cmd>Telescope diagnostics<CR>')
 
 
 -- LSP --
@@ -110,6 +123,7 @@ vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', 
 vim.api.nvim_set_keymap('n', '<leader>rr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fm', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>',
 	{ noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'h', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 
 -- Running file --
 vim.keymap.set('n', '<leader>r', function()

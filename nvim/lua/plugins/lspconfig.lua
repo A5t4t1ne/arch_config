@@ -1,6 +1,6 @@
 local lsp_zero = require('lsp-zero')
 
-lsp_zero.on_attach(function(client, bufnr)
+lsp_zero.on_attach(function(_, bufnr)
 	-- see :help lsp-zero-keybindings
 	-- to learn the available actions
 	lsp_zero.default_keymaps({ buffer = bufnr })
@@ -77,7 +77,9 @@ cmp.setup({
 })
 
 -- An example nvim-lspconfig capabilities setting
-local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+local on_attach = lsp_zero.on_attach
 
 -- Ensure that dynamicRegistration is enabled! This allows the LS to take into account actions like the
 -- Create Unresolved File code action, resolving completions for unindexed code blocks, ...
@@ -87,28 +89,26 @@ capabilities.workspace = {
 	},
 }
 
+local servers = {
+	clangd = {},
+	texlab = {},
+	marksman = {},
+	rust_analyzer = {},
+	lua_ls = {},
+	ruff = {},
+	pyright = {},
+	ruby_lsp = {},
+	tinymist = {},
+	sorbet = {},
+	ltex = {},
+	gopls = {},
+}
+
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-	ensure_installed = {
-		'clangd',
-		'texlab',
-		'marksman',
-		'rust_analyzer',
-		'lua_ls',
-		'jedi_language_server',
-		'ruby_lsp',
-		'tinymist',
-		-- 'sorbet',
-		'ltex',
-		'gopls',
-		-- needs to be manually installed:
-		-- 'goimports',
-		-- 'gofumpt',
-		-- 'gomodifytags',  -- Modify struct field tags
-		-- 'impl'
-	},
-	automatic_installation = false,
+	ensure_installed = vim.tbl_keys(servers),
+	automatic_installation = true,
 	handlers = {
 		function(server_name)
 			local lspconfig = require('lspconfig')
@@ -130,12 +130,22 @@ require('mason-lspconfig').setup({
 					filetypes = { "arduino" },
 					root_dir = require('lspconfig.util').root_pattern("*.ino", "sketch.yaml"),
 				})
+			elseif server_name == "ruby_lsp" then
+				require('lspconfig').ruby_lsp.setup({
+					cmd = { vim.fn.expand("~/.asdf/shims/ruby-lsp") },
+					capabilities = capabilities,
+					on_attach = lsp_zero.on_attach,
+					filetypes = (servers[server_name] or {}).filetypes,
+				})
 			else
-				require('lspconfig')[server_name].setup({})
+				require('lspconfig')[server_name].setup({
+					capabilities = capabilities,
+					on_attach = on_attach,
+					settings = servers[server_name] or {},
+					filetypes = (servers[server_name] or {}).filetypes,
+				})
 			end
 		end,
-
-
 
 		texlab = function()
 			require('lspconfig').texlab.setup({
@@ -167,25 +177,11 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- This is necessary so that tinymist knows which is the main file
 vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = "main.typ", 
-    callback = function()
-        vim.lsp.buf.execute_command({
-            command = 'tinymist.pinMain',
-            arguments = { vim.api.nvim_buf_get_name(0) }
-        })
-    end,
+	pattern = "main.typ",
+	callback = function()
+		vim.lsp.buf.execute_command({
+			command = 'tinymist.pinMain',
+			arguments = { vim.api.nvim_buf_get_name(0) }
+		})
+	end,
 })
-
-
-require('lspconfig').solargraph.setup {
-	capabilities = require('cmp_nvim_lsp').default_capabilities(),
-	settings = {
-		solargraph = {
-			diagnostics = true,
-			completion = true,
-			rename = true -- Explicitly enable renaming
-		}
-	}
-}
-
-require('lspconfig').tinymist.setup({})

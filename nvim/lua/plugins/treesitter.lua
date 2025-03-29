@@ -23,6 +23,7 @@ return {
 					"csharp",
 					"C#",
 					"cs",
+					"typst",
 				},
 				sync_install = false,
 				auto_install = true,
@@ -33,9 +34,16 @@ return {
 				indent = {
 					enable = true,
 				},
+				ignore_install = {},
+				modules = {},
 			})
 		end,
 	},
+
+	vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+		pattern = { "*.typ" },
+		callback = function()
+			vim.cmd("TSEnable highlight")
+		end
+	})
 }
-
-

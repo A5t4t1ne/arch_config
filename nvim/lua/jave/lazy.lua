@@ -38,11 +38,11 @@ require("lazy").setup({
 			'nvim-lua/plenary.nvim',
 		},
 		keys = {
-			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files" },
-			{ "<leader>ps", "<cmd>Telescope live_grep<cr>",  desc = "Live grep" },
-			{ "<C-p>",      "<cmd>Telescope git_files<cr>",  desc = "Find git files" },
-			{ '<leader>tt', '<cmd>Telescope<CR>',  desc = "Open telescope" },
-			{ '<leader>td', '<cmd>Telescope diagnostics<CR>',  desc = "Run telescope diagnostics" },
+			{ "<leader>ff", "<cmd>Telescope find_files<cr>",  desc = "Find files" },
+			{ "<leader>ps", "<cmd>Telescope live_grep<cr>",   desc = "Live grep" },
+			{ "<C-p>",      "<cmd>Telescope git_files<cr>",   desc = "Find git files" },
+			{ '<leader>tt', '<cmd>Telescope<CR>',             desc = "Open telescope" },
+			{ '<leader>td', '<cmd>Telescope diagnostics<CR>', desc = "Run telescope diagnostics" },
 		}
 	},
 
@@ -51,9 +51,8 @@ require("lazy").setup({
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		opts = {
-			ensure_installed = {
-				"markdown",
-				"markdown_inline",
+			highlight = {
+				enable = true,
 			},
 		},
 	},
@@ -112,7 +111,14 @@ require("lazy").setup({
 
 	-- lsp --
 	{ 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
-	{ 'neovim/nvim-lspconfig' },
+	{
+		'VonHeikemen/lsp-zero.nvim',
+		dependencies = {
+			"neovim/nvim-lspconfig",
+			"williamboman/mason-lspconfig.nvim",
+		}
+	},
+	{ 'neovim/nvim-lspconfig', },
 	{
 		'hrsh7th/nvim-cmp',
 		dependencies = {
@@ -125,13 +131,6 @@ require("lazy").setup({
 	},
 	{ 'mfussenegger/nvim-jdtls' },
 	{ 'neovim/nvim-lspconfig', },
-	{
-		'VonHeikemen/lsp-zero.nvim',
-		dependencies = {
-			"neovim/nvim-lspconfig",
-			"williamboman/mason-lspconfig.nvim",
-		}
-	},
 	{ "williamboman/mason.nvim", },
 	{ "williamboman/mason-lspconfig.nvim", },
 	{
