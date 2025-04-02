@@ -146,7 +146,7 @@ format = '\[[$symbol($version)]($style)\]'
 
 [python]
 format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
-disabled = true
+disabled = false
 
 [raku]
 format = '\[[$symbol($version-$vm_version)]($style)\]'
