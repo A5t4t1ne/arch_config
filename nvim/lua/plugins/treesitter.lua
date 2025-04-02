@@ -24,6 +24,7 @@ return {
 					"C#",
 					"cs",
 					"typst",
+					"toml"
 				},
 				sync_install = false,
 				auto_install = true,

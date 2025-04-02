@@ -91,6 +91,8 @@ capabilities.workspace = {
 
 local servers = {
 	clangd = {},
+	gopls = {},
+	ltex = {},
 	texlab = {},
 	marksman = {},
 	rust_analyzer = {},
@@ -100,8 +102,7 @@ local servers = {
 	ruby_lsp = {},
 	tinymist = {},
 	sorbet = {},
-	ltex = {},
-	gopls = {},
+	prettier = {},
 }
 
 
