@@ -31,10 +31,8 @@ vim.diagnostic.config({
 
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "typst",
-  callback = function()
-    vim.bo.shiftwidth = 4
-    vim.bo.tabstop = 4
-    vim.bo.expandtab = true
-  end
+	pattern = "typst",
+	callback = function()
+		vim.opt_local.textwidth = 80
+	end,
 })

@@ -98,11 +98,22 @@ local servers = {
 	rust_analyzer = {},
 	lua_ls = {},
 	ruff = {},
-	pyright = {},
+	pyright = {
+		settings = {
+			pyright = {
+				ignoreExternal = true,
+			},
+		},
+	},
 	ruby_lsp = {},
-	tinymist = {},
+	tinymist = {
+		settings = {
+			formatterMode = "typstfmt", -- or "typstyle"
+			formatterPrintWidth = 80,
+			formatterIndentSize = 4,
+		}
+	},
 	sorbet = {},
-	prettier = {},
 }
 
 
@@ -116,10 +127,17 @@ require('mason-lspconfig').setup({
 			if server_name == "tinymist" then
 				lspconfig.tinymist.setup({
 					settings = {
+						-- formatterMode = "typstfmt",
 						formatterMode = "typstyle",
 						exportPdf = "onType",
-						semanticTokens = "disable"
-					}
+						semanticTokens = "disable",
+
+						formatterPrintWidth = 80,
+						formatterIndentSize = 4,
+					},
+
+					capabilities = capabilities,
+					on_attach = lsp_zero.on_attach,
 				})
 			elseif server_name == "arduino_language_server" then
 				lspconfig.arduino_language_server.setup({
