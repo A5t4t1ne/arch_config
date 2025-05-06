@@ -2,21 +2,30 @@
 # PATH UPDATES
 #######################################################
 path=(
-	'/home/linuxbrew/.linuxbrew/bin'
-	'/usr/local/texlive/2024/bin/x86_64-linux/'
-	'/home/dave/.local/share/bob/nvim-bin' 
-	'/usr/lib/jvm/default/bin/'
-   	'/usr/local/go/bin'
-	'/var/lib/snapd/snap/bin'
-	'/home/dave/.asdf/shims/'
-	'/home/dave/.asdf/installs/rust/1.83.0/bin'
-	$path 
+ 	'/home/dave/.asdf/shims/'
+ 	'/home/linuxbrew/.linuxbrew/bin'
+ 	'/usr/local/texlive/2024/bin/x86_64-linux/'
+ 	'/home/dave/.local/share/bob/nvim-bin' 
+ 	'/usr/lib/jvm/default/bin/'
+    '/usr/local/go/bin'
+   	'/home/dave/go/bin'
+   	'~/go/bin'
+ 	'/var/lib/snapd/snap/bin'
+ 	'/home/dave/.asdf/installs/rust/1.83.0/bin'
+ 	$path 
 )
-export PATH
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export LANGUAGE=en_US
 
+
+
+######################################################
+# PYENV
+######################################################
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# pyenv init - zsh
 
 
 
@@ -53,15 +62,13 @@ alias lk='ls -lSrh'               	# sort by size
 alias lt='ls -ltrh'               	# sort by date
 alias lf="ls -l | grep -vE '^d'"  	# files only
 alias ldir="ls -l | grep -E '^d'"  	# directories only
-alias lf="ls -l | grep -vE '^d'"  	# files only
-alias ldir="ls -l | grep -E '^d'"  	# directories only
 alias ll='ls -lah'					# long listing format
 
 alias p="ps -aux | \grep --color=auto "
 
 alias kssh='kitty +kitten ssh '
 alias pparu='sudo pacman'
-alias pparu='sudo pacman'
+alias grep='grep --color=auto'
 
 
 
@@ -116,13 +123,13 @@ FUNCNEST=100
 setopt appendhistory
 
 # Color for manpages in less. Makes manpages a little easier to read
-# export LESS_TERMCAP_mb=$'\E[01;31m'
-# export LESS_TERMCAP_md=$'\E[01;31m'
-# export LESS_TERMCAP_me=$'\E[0m'
-# export LESS_TERMCAP_se=$'\E[0m'
-# export LESS_TERMCAP_so=$'\E[01;44;33m'
-# export LESS_TERMCAP_ue=$'\E[0m'
-# export LESS_TERMCAP_us=$'\E[01;32m'
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
 
 
 
@@ -173,7 +180,4 @@ bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '\e[3~' delete-char
 bindkey '^[[Z' reverse-menu-complete
-
-
-
-
+fpath=(~/.zsh_completions $fpath)
