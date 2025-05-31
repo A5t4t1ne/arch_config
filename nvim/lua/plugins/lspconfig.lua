@@ -92,8 +92,7 @@ capabilities.workspace = {
 local servers = {
 	clangd = {},
 	gopls = {},
-	ltex = {},
-	texlab = {},
+	-- texlab = {},
 	marksman = {},
 	rust_analyzer = {},
 	lua_ls = {},
@@ -166,32 +165,32 @@ require('mason-lspconfig').setup({
 			end
 		end,
 
-		texlab = function()
-			require('lspconfig').texlab.setup({
-				settings = {
-					texlab = {
-						auxDirectory = ".",
-						bibtexFormatter = "texlab",
-						chktexOpts = {
-							lint = {
-								enabledWarnings = { "code", "math" },
-							},
-						},
-						formatterLineLength = 80,
-					},
-				},
-			})
-		end
+		-- texlab = function()
+		-- 	require('lspconfig').texlab.setup({
+		-- 		settings = {
+		-- 			texlab = {
+		-- 				auxDirectory = ".",
+		-- 				bibtexFormatter = "texlab",
+		-- 				chktexOpts = {
+		-- 					lint = {
+		-- 						enabledWarnings = { "code", "math" },
+		-- 					},
+		-- 				},
+		-- 				formatterLineLength = 80,
+		-- 			},
+		-- 		},
+		-- 	})
+		-- end
 	}
 })
 
 
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "TelescopePrompt",
-	callback = function()
-		vim.b.ltex_enabled = false -- disable ltex for telescope
-	end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = "TelescopePrompt",
+-- 	callback = function()
+-- 		vim.b.ltex_enabled = false -- disable ltex for telescope
+-- 	end,
+-- })
 
 
 -- This is necessary so that tinymist knows which is the main file

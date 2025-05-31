@@ -20,9 +20,7 @@ return {
 					"rust",
 					"yaml",
 					"latex",
-					"csharp",
-					"C#",
-					"cs",
+					"c_sharp",
 					"typst",
 					"toml"
 				},
