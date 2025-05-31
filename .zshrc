@@ -9,7 +9,6 @@ path=(
  	'/usr/lib/jvm/default/bin/'
     '/usr/local/go/bin'
    	'/home/dave/go/bin'
-   	'~/go/bin'
  	'/var/lib/snapd/snap/bin'
  	'/home/dave/.asdf/installs/rust/1.83.0/bin'
  	$path 
@@ -34,6 +33,7 @@ export LANGUAGE=en_US
 #######################################################
 alias lt='ls -a -R --level=1'
 alias gits='git status'
+alias gitc='git commit -m'
 alias pping='ping -c 4 8.8.8.8'
 alias ..='cd ..'
 alias cat=bat
