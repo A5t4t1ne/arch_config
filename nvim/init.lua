@@ -26,13 +26,19 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "text", "markdown", "typst" },
-  callback = function()
-    vim.opt_local.spell = true
-    vim.opt_local.spelllang = "en_gb"
-  end,
+	pattern = { "text", "markdown", "typst" },
+	callback = function()
+		vim.opt_local.spell = true
+		vim.opt_local.spelllang = "en_gb"
+		vim.bo.formatoptions = vim.bo.formatoptions and (vim.bo.formatoptions .. "t") or "t"
+	end,
 })
 
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "nginx.conf", "*.nginx", "*.nginxconf" },
+  command = "setfiletype nginx",
+})
 
 
 -- En-/Disable virtual text for warnings and lower severities
@@ -45,7 +51,6 @@ vim.diagnostic.config({
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "typst",
 	callback = function()
-		vim.opt_local.textwidth = 80
 		vim.bo.commentstring = "// %s"
 	end,
 })

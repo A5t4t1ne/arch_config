@@ -323,7 +323,7 @@ require("lazy").setup({
 		},
 	},
 	{
-		"nvimtools/none-ls.nvim", -- or "jose-elias-alvarez/null-ls.nvim" if using the older repo
+		"nvimtools/none-ls.nvim",
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			local null_ls = require("null-ls")
@@ -332,6 +332,7 @@ require("lazy").setup({
 					null_ls.builtins.formatting.prettier.with({
 						filetypes = { "html", "css", "json", "markdown" },
 					}),
+					null_ls.builtins.formatting.nginx_beautifier,
 				},
 			})
 		end,
