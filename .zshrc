@@ -10,7 +10,6 @@ path=(
     '/usr/local/go/bin'
    	'/home/dave/go/bin'
  	'/var/lib/snapd/snap/bin'
- 	'/home/dave/.asdf/installs/rust/1.83.0/bin'
  	$path 
 )
 export VISUAL=nvim
@@ -36,7 +35,7 @@ alias gits='git status'
 alias gitc='git commit -m'
 alias pping='ping -c 4 8.8.8.8'
 alias ..='cd ..'
-alias cat=bat
+alias cat='bat --style=plain'
 
 cd() {
   builtin cd "$@" && /bin/ls -a --color
