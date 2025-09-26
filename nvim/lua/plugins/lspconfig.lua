@@ -105,13 +105,7 @@ local servers = {
 		},
 	},
 	ruby_lsp = {},
-	tinymist = {
-		settings = {
-			formatterMode = "typstfmt", -- or "typstyle"
-			formatterPrintWidth = 80,
-			formatterIndentSize = 4,
-		}
-	},
+	tinymist = {},
 	sorbet = {},
 }
 
@@ -126,13 +120,13 @@ require('mason-lspconfig').setup({
 			if server_name == "tinymist" then
 				lspconfig.tinymist.setup({
 					settings = {
-						-- formatterMode = "typstfmt",
-						formatterMode = "typstyle",
-						exportPdf = "onType",
+						formatterMode = "typstfmt", -- typstfmt / typstyle
+						exportPdf = "none",
 						semanticTokens = "disable",
 
 						formatterPrintWidth = 80,
 						formatterIndentSize = 4,
+						formatterProseWrap = true,
 					},
 
 					capabilities = capabilities,
@@ -164,34 +158,14 @@ require('mason-lspconfig').setup({
 				})
 			end
 		end,
-
-		-- texlab = function()
-		-- 	require('lspconfig').texlab.setup({
-		-- 		settings = {
-		-- 			texlab = {
-		-- 				auxDirectory = ".",
-		-- 				bibtexFormatter = "texlab",
-		-- 				chktexOpts = {
-		-- 					lint = {
-		-- 						enabledWarnings = { "code", "math" },
-		-- 					},
-		-- 				},
-		-- 				formatterLineLength = 80,
-		-- 			},
-		-- 		},
-		-- 	})
-		-- end
 	}
 })
 
-
--- vim.api.nvim_create_autocmd("FileType", {
--- 	pattern = "TelescopePrompt",
--- 	callback = function()
--- 		vim.b.ltex_enabled = false -- disable ltex for telescope
--- 	end,
--- })
-
+vim.api.nvim_create_autocmd("LspAttach", {
+	callback = function(args)
+		vim.bo[args.buf].formatexpr = ""
+	end,
+})
 
 -- This is necessary so that tinymist knows which is the main file
 vim.api.nvim_create_autocmd("BufEnter", {

@@ -26,11 +26,12 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "text", "markdown", "typst" },
+	pattern = { "text", "markdown", "typst", "*.typ" },
 	callback = function()
 		vim.opt_local.spell = true
 		vim.opt_local.spelllang = "en_gb"
-		vim.bo.formatoptions = vim.bo.formatoptions and (vim.bo.formatoptions .. "t") or "t"
+		-- vim.bo.formatoptions = "t" -- vim.bo.formatoptions and (vim.bo.formatoptions .. "t") or "t"
+		vim.opt.textwidth = 88
 	end,
 })
 
