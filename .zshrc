@@ -3,27 +3,12 @@
 #######################################################
 path=(
  	'/home/dave/.asdf/shims/'
- 	'/home/linuxbrew/.linuxbrew/bin'
- 	'/usr/local/texlive/2024/bin/x86_64-linux/'
  	'/home/dave/.local/share/bob/nvim-bin' 
- 	'/usr/lib/jvm/default/bin/'
-    '/usr/local/go/bin'
-   	'/home/dave/go/bin'
- 	'/var/lib/snapd/snap/bin'
  	$path 
 )
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export LANGUAGE=en_US
-
-
-
-######################################################
-# PYENV
-######################################################
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# pyenv init - zsh
 
 
 
