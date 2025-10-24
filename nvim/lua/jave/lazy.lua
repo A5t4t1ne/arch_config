@@ -236,46 +236,11 @@ require("lazy").setup({
 			},
 		},
 	},
-	-- {
-	-- 	"lervag/vimtex",
-	-- 	ft = { "tex" },
-	-- 	config = function()
-	-- 		vim.g.vimtex_view_method = 'zathura'
-	-- 		vim.g.vimtex_compiler_method = 'latexmk'
-	-- 		vim.g.vimtex_compiler_progname = 'nvr'
-	-- 		vim.g.vimtex_quickfix_mode = 1
-	-- 		vim.g.vimtex_compiler_latexmk = {
-	-- 			build_dir = 'build',
-	-- 			callback = 1,
-	-- 			continuous = 1,
-	-- 			executable = 'latexmk',
-	-- 			options = {
-	-- 				'-pdf',
-	-- 				'-outdir=build',
-	-- 				'-shell-escape',
-	-- 				'-verbose',
-	-- 				'-file-line-error',
-	-- 				'-synctex=1',
-	-- 				'-interaction=nonstopmode',
-	-- 			},
-	-- 		}
-	-- 		vim.g.vimtex_view_general_options =
-	-- 		'--synctex-forward @line:@col:@tex build/@pdf' -- for zathura to find the pdf in the build folder
-	-- 	end
-	-- },
 	{ "honza/vim-snippets", }, -- seems like an engine for snippets
 	{
 		'L3MON4D3/LuaSnip',
 		dependencies = { 'rafamadriz/friendly-snippets' },
 	},
-	-- {
-	-- 	"jhofscheier/ltex-utils.nvim", -- for add to dictionary, ignore false positives etc.
-	-- 	ft = { "tex", "bib" },
-	-- 	dependencies = {
-	-- 		"neovim/nvim-lspconfig",
-	-- 		"nvim-telescope/telescope.nvim",
-	-- 	},
-	-- },
 	{
 		'Kicamon/markdown-table-mode.nvim',
 		config = function()
@@ -300,11 +265,6 @@ require("lazy").setup({
 		},
 	},
 
-	-- latex --
-	-- {
-	-- 	'vigoux/ltex-ls.nvim',
-	-- 	ft = { 'tex' },
-	-- },
 
 	-- typst --
 	{
@@ -337,6 +297,19 @@ require("lazy").setup({
 			})
 		end,
 		dependencies = { "williamboman/mason.nvim" },
-	}
+	},
 
+	-- csharp --
+	{
+		"iabdelkareem/csharp.nvim",
+		dependencies = {
+			"williamboman/mason.nvim", -- Required, automatically installs omnisharp
+			"mfussenegger/nvim-dap",
+			"Tastyep/structlog.nvim", -- Optional, but highly recommended for debugging
+		},
+		config = function()
+			require("mason").setup() -- Mason setup must run before csharp, only if you want to use omnisharp
+			require("csharp").setup()
+		end
+	}
 })

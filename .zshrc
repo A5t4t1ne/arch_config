@@ -4,11 +4,13 @@
 path=(
  	'/home/dave/.asdf/shims/'
  	'/home/dave/.local/share/bob/nvim-bin' 
+    '/usr/share/dotnet'
  	$path 
 )
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export LANGUAGE=en_US
+export DOTNET_ROOT=/usr/share/dotnet/
 
 
 
