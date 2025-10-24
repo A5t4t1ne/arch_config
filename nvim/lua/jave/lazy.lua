@@ -311,5 +311,11 @@ require("lazy").setup({
 			require("mason").setup() -- Mason setup must run before csharp, only if you want to use omnisharp
 			require("csharp").setup()
 		end
-	}
+	},
+	{
+		'windwp/nvim-autopairs',
+		event = "InsertEnter",
+		config = true
+	},
+
 })
