@@ -22,10 +22,38 @@ alias gits='git status'
 alias gitc='git commit -m'
 alias pping='ping -c 4 8.8.8.8'
 alias ..='cd ..'
+alias ...='cd ../..'
+alias 3..='cd ../../..'
 alias cat='bat --style=plain'
 
 cd() {
   builtin cd "$@" && /bin/ls -a --color
+}
+
+
+mkcd () {
+  \mkdir -p "$1"
+  cd "$1"
+}
+
+tempe () {
+  cd "$(mktemp -d)"
+  chmod -R 0700 .
+  if [[ $# -eq 1 ]]; then
+    \mkdir -p "$1"
+    cd "$1"
+    chmod -R 0700 .
+  fi
+}
+
+boop () {
+  local last="$?"
+  if [[ "$last" == '0' ]]; then
+    sfx good
+  else
+    sfx bad
+  fi
+  $(exit "$last")
 }
 
 
