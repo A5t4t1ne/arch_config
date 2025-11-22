@@ -1,4 +1,5 @@
 local lsp_zero = require('lsp-zero')
+local util = require('lspconfig.util')
 
 lsp_zero.on_attach(function(_, bufnr)
 	-- see :help lsp-zero-keybindings
@@ -91,7 +92,11 @@ capabilities.workspace = {
 
 local servers = {
 	clangd = {},
-	gopls = {},
+	gopls = {
+		gopls = {
+			semanticTokens = false,
+		}
+	},
 	-- texlab = {},
 	marksman = {},
 	rust_analyzer = {},
@@ -128,6 +133,11 @@ require('mason-lspconfig').setup({
 						formatterIndentSize = 4,
 						formatterProseWrap = true,
 					},
+					root_dir = function(fname)
+						-- Necessary so chapters/chapter.typ can access a figure from a paralell dir
+						return util.root_pattern('.git', 'typst.toml')(fname)
+							or vim.fn.getcwd() -- as fallback, use the folder of the current file
+					end,
 
 					capabilities = capabilities,
 					on_attach = lsp_zero.on_attach,
@@ -148,6 +158,15 @@ require('mason-lspconfig').setup({
 					capabilities = capabilities,
 					on_attach = lsp_zero.on_attach,
 					filetypes = (servers[server_name] or {}).filetypes,
+				})
+			elseif server_name == "gopls" then
+				require('lspconfig').gopls.setup({
+					settings = {
+						gopls = {
+							semanticTokens = true,
+						}
+					},
+					on_attach = lsp_zero.on_attach
 				})
 			else
 				require('lspconfig')[server_name].setup({

@@ -303,7 +303,7 @@ require("lazy").setup({
 	{
 		"iabdelkareem/csharp.nvim",
 		dependencies = {
-			"williamboman/mason.nvim", -- Required, automatically installs omnisharp
+			"williamboman/mason.nvim",
 			"mfussenegger/nvim-dap",
 			"Tastyep/structlog.nvim", -- Optional, but highly recommended for debugging
 		},
@@ -312,6 +312,8 @@ require("lazy").setup({
 			require("csharp").setup()
 		end
 	},
+
+	-- misc --
 	{
 		'windwp/nvim-autopairs',
 		event = "InsertEnter",

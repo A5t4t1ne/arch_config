@@ -4,6 +4,7 @@ require("plugins.telescope")
 require("plugins.treesitter")
 require("plugins.vim-fugitive")
 require("plugins.lspconfig")
+require("plugins.dap")
 
 vim.wo.relativenumber = true
 vim.wo.number = true
@@ -30,7 +31,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.opt_local.spell = true
 		vim.opt_local.spelllang = "en_gb"
-		-- vim.bo.formatoptions = "t" -- vim.bo.formatoptions and (vim.bo.formatoptions .. "t") or "t"
 		vim.opt.textwidth = 88
 	end,
 })

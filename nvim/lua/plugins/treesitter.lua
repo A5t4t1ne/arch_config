@@ -22,7 +22,8 @@ return {
 					"latex",
 					"c_sharp",
 					"typst",
-					"toml"
+					"toml",
+					"go",
 				},
 				sync_install = false,
 				auto_install = true,
