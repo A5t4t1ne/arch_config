@@ -110,8 +110,9 @@ local servers = {
 		},
 	},
 	ruby_lsp = {},
+	rubocop = {},
 	tinymist = {},
-	sorbet = {},
+	-- sorbet = {},
 }
 
 
@@ -154,10 +155,13 @@ require('mason-lspconfig').setup({
 				})
 			elseif server_name == "ruby_lsp" then
 				require('lspconfig').ruby_lsp.setup({
+					mason = false,
 					cmd = { vim.fn.expand("~/.asdf/shims/ruby-lsp") },
 					capabilities = capabilities,
 					on_attach = lsp_zero.on_attach,
-					filetypes = (servers[server_name] or {}).filetypes,
+					-- init_options = {
+					-- 	enabledFeatures = { "codeActions", "codeLens", "diagnostics", "documentHighlights", "documentSymbols", "foldingRanges", "selectionRanges" },
+					-- },
 				})
 			elseif server_name == "gopls" then
 				require('lspconfig').gopls.setup({

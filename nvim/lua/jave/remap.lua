@@ -1,4 +1,4 @@
-local colemak = true -- not fully supported, some keys are not rebound yet
+local layout = "qwerty"
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = ' '
@@ -15,7 +15,7 @@ end, { desc = "switch python venv" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
-if colemak then
+if layout == "colemak" then
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "n", "<Left>", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "e", "<Down>", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "i", "<Up>", { noremap = true })
@@ -77,27 +77,31 @@ if colemak then
 	vim.keymap.set("n", "<C-;>", "<C-o>zz", { noremap = true })
 	vim.keymap.set("n", "<C-y>", "<C-i>zz", { noremap = true })
 
-else
+elseif layout == "qwerty" then
 	vim.keymap.set("n", "n", "nzz")
+	vim.keymap.set("n", "N", "Nzz")
 
+	-- basic navigatinon
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "j", "<Left>", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "<Down>", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "l", "<Up>", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "ö", "<Right>", { noremap = true })
+	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, ";", "<Right>", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "K", "<Down>zz", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "L", "<Up>zz", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "é", "L", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "h", "", { noremap = true })
 
+	-- Wincow navigation
 	vim.keymap.set({ 'n' }, "<C-w>j", "<C-w>h", { noremap = true })
 	vim.keymap.set({ 'n' }, "<C-w>k", "<C-w>j", { noremap = true })
 	vim.keymap.set({ 'n' }, "<C-w>l", "<C-w>k", { noremap = true })
 	vim.keymap.set({ 'n' }, "<C-w>ö", "<C-w>l", { noremap = true })
 
 
+	-- insert lines
 	vim.keymap.set({ "n" }, "<A-k>", "o<Esc>", { noremap = true })
 	vim.keymap.set({ "n" }, "<A-l>", "O<Esc>", { noremap = true })
 
+	-- next/previous jump location
 	vim.keymap.set("n", "<C-o>", "<C-o>zz")
 	vim.keymap.set("n", "<C-i>", "<C-i>zz")
 end
@@ -108,7 +112,7 @@ vim.keymap.set('n', '<leader>bn', '<cmd>enew<cr>', { noremap = true }) -- new bu
 
 
 -- editing --
-vim.keymap.set("v", "<leader>p", "\"_dP")                     -- paste without overwriting clipboard
+vim.keymap.set("v", "<leader>p", "\"_dP") -- paste without overwriting clipboard
 vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<C-c><cmd>w<cr>") -- save
 
 

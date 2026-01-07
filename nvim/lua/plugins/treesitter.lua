@@ -18,6 +18,7 @@ return {
 					"lua",
 					"python",
 					"rust",
+					"ruby",
 					"yaml",
 					"latex",
 					"c_sharp",
