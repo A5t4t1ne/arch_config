@@ -74,3 +74,17 @@ your
 CHF
 Gampelen
 CTFs
+This project contains the code for the TACEntry Client and its installer. The main purpose of this client is to scan access cards with an NFC reader and display data connected to this specific card, such as th owner and access rights. The data is fetched with the ExosClient from the backend which in turn uses the official Exos REST API.
+backend
+ExosClient
+Exos
+TACEntry
+config
+frontend
+Avalonia
+Ansible
+This target system is supposed to be a remote machine so it is desirable to establish the possibility of remote access. For this you need to create an environment that enables remote users to connect to the three users created in Task 2.1 via SSH. However since no one trusts Eve, it is necessary to extremely limit the accessibility once an SSH connection is established to this account.
+YAML
+Gitlab
+playbook
+playbooks

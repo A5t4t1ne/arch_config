@@ -82,15 +82,11 @@ elseif layout == "qwerty" then
 	vim.keymap.set("n", "N", "Nzz")
 
 	-- basic navigatinon
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "j", "<Left>", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "k", "<Down>", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "l", "<Up>", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, ";", "<Right>", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "K", "<Down>zz", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "L", "<Up>zz", { noremap = true })
-	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "h", "", { noremap = true })
+	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "J", "<Down>zz", { noremap = true })
+	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "K", "<Up>zz", { noremap = true })
+	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "Y", "J", { noremap = true })
 
-	-- Wincow navigation
+	-- Window navigation
 	vim.keymap.set({ 'n' }, "<C-w>j", "<C-w>h", { noremap = true })
 	vim.keymap.set({ 'n' }, "<C-w>k", "<C-w>j", { noremap = true })
 	vim.keymap.set({ 'n' }, "<C-w>l", "<C-w>k", { noremap = true })
@@ -98,8 +94,8 @@ elseif layout == "qwerty" then
 
 
 	-- insert lines
-	vim.keymap.set({ "n" }, "<A-k>", "o<Esc>", { noremap = true })
-	vim.keymap.set({ "n" }, "<A-l>", "O<Esc>", { noremap = true })
+	vim.keymap.set({ "n" }, "<A-j>", "o<Esc>", { noremap = true })
+	vim.keymap.set({ "n" }, "<A-k>", "O<Esc>", { noremap = true })
 
 	-- next/previous jump location
 	vim.keymap.set("n", "<C-o>", "<C-o>zz")
@@ -118,6 +114,7 @@ vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<C-c><cmd>w<cr>") -- save
 
 -- plugins-specific --
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+vim.keymap.set('n', '<leader>sa', '<cmd>set ft=yaml.ansible<CR>')
 
 
 -- LSP --
@@ -128,7 +125,7 @@ vim.api.nvim_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', 
 vim.api.nvim_set_keymap('n', '<leader>rr', '<cmd>lua vim.lsp.buf.references()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fm', '<cmd>lua vim.lsp.buf.format()<CR>',
 	{ noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'h', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 
 -- Running file --
 vim.keymap.set('n', '<leader>r', function()

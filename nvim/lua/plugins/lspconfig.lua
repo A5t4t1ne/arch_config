@@ -113,6 +113,10 @@ local servers = {
 	rubocop = {},
 	tinymist = {},
 	-- sorbet = {},
+	ansiblels = {},
+	-- vacuum = { single_file_support = true, filetypes = { "yaml", "json", "yml" } }
+	gitlab_ci_ls = {},
+	yamlls = {},
 }
 
 
@@ -175,7 +179,7 @@ require('mason-lspconfig').setup({
 			else
 				require('lspconfig')[server_name].setup({
 					capabilities = capabilities,
-					on_attach = on_attach,
+					on_attach = lsp_zero.on_attach,
 					settings = servers[server_name] or {},
 					filetypes = (servers[server_name] or {}).filetypes,
 				})
@@ -198,5 +202,13 @@ vim.api.nvim_create_autocmd("BufEnter", {
 			command = 'tinymist.pinMain',
 			arguments = { vim.api.nvim_buf_get_name(0) }
 		})
+	end,
+})
+
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "*.gitlab-ci*.{yml,yaml}",
+	callback = function()
+		vim.bo.filetype = "yaml.gitlab"
 	end,
 })
