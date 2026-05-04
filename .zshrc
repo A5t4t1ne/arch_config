@@ -3,14 +3,18 @@
 #######################################################
 path=(
  	'/home/dave/.asdf/shims/'
+    '/home/dave/.asdf/installs/rust/1.91.0/bin/'
  	'/home/dave/.local/share/bob/nvim-bin' 
     '/usr/share/dotnet'
+    '/home/dave/.bun/bin'
+    '/home/dave/bin'
  	$path 
 )
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export LANGUAGE=en_US
 export DOTNET_ROOT=/usr/share/dotnet/
+export ANSIBLE_NOCOWS=1
 
 
 
@@ -25,6 +29,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias 3..='cd ../../..'
 alias cat='bat --style=plain'
+alias rg="rg --hidden -g '!.venv' -g '!.git'"
+alias sdll="sudo ls -la"
 
 cd() {
   builtin cd "$@" && /bin/ls -a --color
@@ -56,13 +62,16 @@ boop () {
   $(exit "$last")
 }
 
+highlight() { 
+    grep --color=always "$1\|$"; 
+}
+
 
 alias cp='cp -i '
 alias mv='mv -i '
 alias rm='trash'
 alias mkdir='mkdir -p '
 alias ps='ps -aux'
-alias ping='ping -c 4'
 alias less='less -R'
 alias n='nvim'
 
@@ -74,15 +83,15 @@ alias ls='ls -a --color=auto'
 alias lx='ls -lXBh'               	# sort by extension
 alias lk='ls -lSrh'               	# sort by size
 alias lt='ls -ltrh'               	# sort by date
-alias lf="ls -l | grep -vE '^d'"  	# files only
-alias ldir="ls -l | grep -E '^d'"  	# directories only
+alias lf="ls -l | \grep -vE '^d'"  	# files only
+alias ldir="ls -l | \grep -E '^d'" 	# directories only
 alias ll='ls -lah'					# long listing format
 
 alias p="ps -aux | \grep --color=auto "
 
 alias kssh='kitty +kitten ssh '
 alias pparu='sudo pacman'
-alias grep='grep --color=auto'
+alias grep='grep -n --color=auto --exclude-dir={venv,.venv,.git}'
 
 
 
@@ -145,12 +154,13 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 
+umask 022
 
 
 #######################################################
 # START PLUGINS AND TOOLS
 #######################################################
-# fastfetch -c $HOME/.config/fastfetch/config-v2.jsonc
+fpath=(~/.zsh_completions $fpath)
 
 eval "$(zoxide init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -194,4 +204,9 @@ bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '\e[3~' delete-char
 bindkey '^[[Z' reverse-menu-complete
-fpath=(~/.zsh_completions $fpath)
+
+
+export GPG_TTY="$(tty)"
+export SSH_AGENT_PID=""
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
