@@ -283,42 +283,33 @@ require("lazy").setup({
 	{
 		"nvimtools/none-ls.nvim",
 		event = { "BufReadPre", "BufNewFile" },
+		dependencies = { "williamboman/mason.nvim" },
 		config = function()
 			local null_ls = require("null-ls")
+
 			null_ls.setup({
 				sources = {
 					null_ls.builtins.formatting.prettier.with({
-						filetypes = { "html", "css", "json", "markdown" },
-					}),
-					null_ls.builtins.formatting.prettierd.with({
-						filetypes = { "yaml", "yml" },
+						filetypes = { "html", "css", "json", "markdown", "yaml" },
 					}),
 					null_ls.builtins.formatting.nginx_beautifier,
 				},
 			})
 		end,
-		dependencies = { "williamboman/mason.nvim" },
 	},
 
 	-- csharp --
-	{
-		"iabdelkareem/csharp.nvim",
-		dependencies = {
-			"williamboman/mason.nvim",
-			"mfussenegger/nvim-dap",
-			"Tastyep/structlog.nvim", -- Optional, but highly recommended for debugging
-		},
-		config = function()
-			require("mason").setup() -- Mason setup must run before csharp, only if you want to use omnisharp
-			require("csharp").setup()
-		end
-	},
-
-	-- misc --
-	{
-		'windwp/nvim-autopairs',
-		event = "InsertEnter",
-		config = true
-	},
+	-- {
+	-- 	"iabdelkareem/csharp.nvim",
+	-- 	dependencies = {
+	-- 		"williamboman/mason.nvim",
+	-- 		"mfussenegger/nvim-dap",
+	-- 		"Tastyep/structlog.nvim", -- Optional, but highly recommended for debugging
+	-- 	},
+	-- 	config = function()
+	-- 		require("mason").setup() -- Mason setup must run before csharp, only if you want to use omnisharp
+	-- 		require("csharp").setup()
+	-- 	end
+	-- },
 
 })

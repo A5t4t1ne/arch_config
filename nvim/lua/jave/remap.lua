@@ -76,7 +76,6 @@ if layout == "colemak" then
 
 	vim.keymap.set("n", "<C-;>", "<C-o>zz", { noremap = true })
 	vim.keymap.set("n", "<C-y>", "<C-i>zz", { noremap = true })
-
 elseif layout == "qwerty" then
 	vim.keymap.set("n", "n", "nzz")
 	vim.keymap.set("n", "N", "Nzz")
@@ -108,7 +107,7 @@ vim.keymap.set('n', '<leader>bn', '<cmd>enew<cr>', { noremap = true }) -- new bu
 
 
 -- editing --
-vim.keymap.set("v", "<leader>p", "\"_dP") -- paste without overwriting clipboard
+vim.keymap.set("v", "<leader>p", "\"_dP")                     -- paste without overwriting clipboard
 vim.keymap.set({ "n", "v", "i" }, "<C-s>", "<C-c><cmd>w<cr>") -- save
 
 

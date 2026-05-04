@@ -97,7 +97,6 @@ local servers = {
 			semanticTokens = false,
 		}
 	},
-	-- texlab = {},
 	marksman = {},
 	rust_analyzer = {},
 	lua_ls = {},
@@ -114,9 +113,9 @@ local servers = {
 	tinymist = {},
 	-- sorbet = {},
 	ansiblels = {},
-	-- vacuum = { single_file_support = true, filetypes = { "yaml", "json", "yml" } }
 	gitlab_ci_ls = {},
 	yamlls = {},
+	omnisharp = {},
 }
 
 
