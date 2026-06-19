@@ -85,13 +85,6 @@ elseif layout == "qwerty" then
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "K", "<Up>zz", { noremap = true })
 	vim.keymap.set({ 'n', 'v', 'x', 's', 'o', 't' }, "Y", "J", { noremap = true })
 
-	-- Window navigation
-	vim.keymap.set({ 'n' }, "<C-w>j", "<C-w>h", { noremap = true })
-	vim.keymap.set({ 'n' }, "<C-w>k", "<C-w>j", { noremap = true })
-	vim.keymap.set({ 'n' }, "<C-w>l", "<C-w>k", { noremap = true })
-	vim.keymap.set({ 'n' }, "<C-w>ö", "<C-w>l", { noremap = true })
-
-
 	-- insert lines
 	vim.keymap.set({ "n" }, "<A-j>", "o<Esc>", { noremap = true })
 	vim.keymap.set({ "n" }, "<A-k>", "O<Esc>", { noremap = true })

@@ -20,8 +20,6 @@ require("lazy").setup({
 		}
 	},
 
-
-
 	-- theme --
 	{
 		"folke/tokyonight.nvim",
@@ -93,9 +91,6 @@ require("lazy").setup({
 		},
 	},
 
-	-- VimBeGood --
-	{ "ThePrimeagen/vim-be-good", },
-
 	-- UndoTree --
 	{ "mbbill/undotree", },
 
@@ -107,8 +102,13 @@ require("lazy").setup({
 		},
 	},
 
-	-- lsp --
-	{ 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
+	-- LSP --
+	{
+		"nvimtools/none-ls.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = { "williamboman/mason.nvim" },
+	},
+	{ 'neovim/nvim-lspconfig', },
 	{
 		'VonHeikemen/lsp-zero.nvim',
 		dependencies = {
@@ -116,7 +116,6 @@ require("lazy").setup({
 			"williamboman/mason-lspconfig.nvim",
 		}
 	},
-	{ 'neovim/nvim-lspconfig', },
 	{
 		'hrsh7th/nvim-cmp',
 		dependencies = {
@@ -128,7 +127,6 @@ require("lazy").setup({
 		},
 	},
 	{ 'mfussenegger/nvim-jdtls' },
-	{ 'neovim/nvim-lspconfig', },
 	{ "williamboman/mason.nvim", },
 	{ "williamboman/mason-lspconfig.nvim", },
 	{
@@ -185,6 +183,8 @@ require("lazy").setup({
 	{
 		"ahmedkhalf/project.nvim",
 	},
+
+	-- autocompletion --
 	{
 		"mfussenegger/nvim-dap",
 		dependencies = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio" },
@@ -279,23 +279,6 @@ require("lazy").setup({
 			{ '<leader>tp', '<cmd>TypstPreview<CR>' },
 			{ '<leader>ts', '<cmd>TypstPreviewStop<CR>' },
 		},
-	},
-	{
-		"nvimtools/none-ls.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		dependencies = { "williamboman/mason.nvim" },
-		config = function()
-			local null_ls = require("null-ls")
-
-			null_ls.setup({
-				sources = {
-					null_ls.builtins.formatting.prettier.with({
-						filetypes = { "html", "css", "json", "markdown", "yaml" },
-					}),
-					null_ls.builtins.formatting.nginx_beautifier,
-				},
-			})
-		end,
 	},
 
 	-- csharp --

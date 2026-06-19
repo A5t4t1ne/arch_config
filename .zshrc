@@ -2,9 +2,11 @@
 # PATH UPDATES
 #######################################################
 path=(
- 	'/home/dave/.asdf/shims/'
+    '/home/dave/.asdf/shims/'
     '/home/dave/.asdf/installs/rust/1.91.0/bin/'
- 	'/home/dave/.local/share/bob/nvim-bin' 
+    '/home/dave/.cargo/bin'
+    '/home/dave/.local/bin'
+    '/home/dave/.local/share/bob/nvim-bin' 
     '/usr/share/dotnet'
     '/home/dave/.bun/bin'
     '/home/dave/bin'
@@ -163,7 +165,8 @@ umask 022
 fpath=(~/.zsh_completions $fpath)
 
 eval "$(zoxide init zsh)"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/fzf/key-bindings.zsh
 
 eval "$(starship init zsh)"
 
