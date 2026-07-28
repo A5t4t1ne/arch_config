@@ -3,14 +3,13 @@
 #######################################################
 path=(
     '/home/dave/.asdf/shims/'
-    '/home/dave/.asdf/installs/rust/1.91.0/bin/'
     '/home/dave/.cargo/bin'
+    '/home/dave/.local/share/bob/nvim-bin/' 
     '/home/dave/.local/bin'
-    '/home/dave/.local/share/bob/nvim-bin' 
     '/usr/share/dotnet'
     '/home/dave/.bun/bin'
     '/home/dave/bin'
- 	$path 
+    $path 
 )
 export VISUAL=nvim
 export EDITOR="$VISUAL"
@@ -165,7 +164,6 @@ umask 022
 fpath=(~/.zsh_completions $fpath)
 
 eval "$(zoxide init zsh)"
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/share/fzf/key-bindings.zsh
 
 eval "$(starship init zsh)"
@@ -189,9 +187,9 @@ zinit wait lucid for \
     atload"_zsh_autosuggest_start" \
     zsh-users/zsh-autosuggestions \
     zdharma-continuum/fast-syntax-highlighting
-
+ 
 # Allow for case-insensitive and partial name completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 
 #######################################################
 # KEYBINDS

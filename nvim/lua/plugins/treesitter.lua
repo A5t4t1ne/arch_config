@@ -1,50 +1,41 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		build = function()
-			require("nvim-treesitter.install").update({ with_sync = true })
-		end,
+		branch = "main",
+		lazy = false,
+		build = ":TSUpdate",
 		config = function()
-			require("nvim-treesitter.configs").setup({
-				ensure_installed = {
-					"bash",
-					"c",
-					"cpp",
-					"css",
-					"html",
-					"javascript",
-					"java",
-					"json",
-					"lua",
-					"python",
-					"rust",
-					"ruby",
-					"yaml",
-					"latex",
-					"c_sharp",
-					"typst",
-					"toml",
-					"go",
-				},
-				sync_install = false,
-				auto_install = true,
-				highlight = {
-					enable = true,
-					additional_vim_regex_highlighting = false,
-				},
-				indent = {
-					enable = true,
-				},
-				ignore_install = {},
-				modules = {},
+			require("nvim-treesitter").install({
+				"bash",
+				"c",
+				"cpp",
+				"css",
+				"html",
+				"javascript",
+				"java",
+				"json",
+				"lua",
+				"python",
+				"rust",
+				"ruby",
+				"yaml",
+				"latex",
+				"c_sharp",
+				"typst",
+				"toml",
+				"go",
+			})
+
+			-- start highlighting/indent for any buffer with an installed parser
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = "*",
+				callback = function()
+					local started = pcall(vim.treesitter.start)
+					if started then
+						vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+					end
+				end,
 			})
 		end,
 	},
-
-	vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-		pattern = { "*.typ" },
-		callback = function()
-			vim.cmd("TSEnable highlight")
-		end
-	})
 }
